@@ -55,7 +55,8 @@ const workflow = [
 
 export function ProductWorkflow() {
   const [active, setActive] = useState(0);
-  const current = workflow[active] ?? workflow[0];
+  const current = workflow[active];
+  if (!current) return null;
 
   return (
     <div>

@@ -180,11 +180,7 @@ function TeardownsPage() {
           plausible story dress itself up as a finding.
         </p>
         <p className="mt-4 text-sm text-muted-foreground">
-          More teardowns will land here. Have a product in mind? That's what the{" "}
-          <Link to="/lab/metrics" className="underline decoration-border underline-offset-4 hover:decoration-foreground">
-            labs
-          </Link>{" "}
-          are for.
+          More teardowns will land here as I find products with a specific question worth examining.
         </p>
       </div>
     </div>

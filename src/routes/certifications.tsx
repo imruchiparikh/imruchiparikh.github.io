@@ -68,12 +68,12 @@ function CertificationsPage() {
         >
           in the notes
         </Link>{" "}
-        and{" "}
+        and in{" "}
         <Link
-          to="/lab/prioritization"
+          to="/workflow"
           className="underline decoration-border underline-offset-4 hover:decoration-foreground"
         >
-          the labs
+          how I approach product work
         </Link>
         .
       </p>

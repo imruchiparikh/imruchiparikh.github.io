@@ -31,7 +31,8 @@ function NotesIndex() {
       <div className="mt-16 space-y-20">
         {groups.map((group, groupIndex) => {
           const groupNotes = notes.filter((note) => group.kinds.some((kind) => kind === note.kind) && (groupIndex !== 0 || note.kind !== "original" || note.slug !== "what-makes-an-ai-feature-useful"));
-          if (groupIndex === 1) groupNotes.unshift(notes[2]);
+          const aiNote = notes[2];
+          if (groupIndex === 1 && aiNote) groupNotes.unshift(aiNote);
           return (
             <section key={group.label} className="grid gap-8 border-t border-border pt-8 lg:grid-cols-[0.38fr_1fr]">
               <div><p className="label-mono text-cyan">0{groupIndex + 1} · Topic</p><h2 className="mt-3 font-display text-2xl font-semibold text-foreground">{group.label}</h2><p className="mt-3 max-w-xs text-sm leading-6 text-muted-foreground">{group.description}</p></div>
