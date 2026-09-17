@@ -7,4 +7,4 @@
 - [x] Simplify the opening to “Hi, I’m Ruchi” with a short, fun personal line beneath it.
 - [x] Add a grounded AI & Product Skills page.
 - [x] Add a clickable PRD-to-product workflow with short details.
-- [ ] Verify desktop, mobile, navigation, workflow interaction, and build health.
+- [x] Verify desktop, mobile, navigation, workflow interaction, and build health.
