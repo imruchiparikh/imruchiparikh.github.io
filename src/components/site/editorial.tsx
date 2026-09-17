@@ -10,7 +10,7 @@ export function SectionLabel({
   className?: string;
 }) {
   return (
-    <p className={`label-mono text-muted-foreground ${className}`}>{children}</p>
+    <p className={`label-mono text-cyan ${className}`}>{children}</p>
   );
 }
 
@@ -42,7 +42,7 @@ export function PageIntro({
   return (
     <div className="border-b border-border pb-10">
       <SectionLabel>{label}</SectionLabel>
-      <h1 className="mt-4 max-w-2xl font-display text-4xl font-medium leading-[1.1] tracking-tight text-foreground sm:text-5xl">
+      <h1 className="mt-4 max-w-3xl font-display text-4xl font-semibold leading-[1.08] text-foreground sm:text-6xl">
         {title}
       </h1>
       {children ? (
@@ -67,7 +67,7 @@ export function SourceAttribution({
   compact?: boolean;
 }) {
   return (
-    <div className="rounded-md border border-border bg-card px-4 py-3.5">
+    <div className="border border-border bg-card px-4 py-3.5">
       <p className="label-mono text-muted-foreground">Inspired by</p>
       <p className="mt-1.5 text-sm leading-relaxed">
         {source.url ? (
@@ -75,7 +75,7 @@ export function SourceAttribution({
             href={source.url}
             target="_blank"
             rel="noreferrer"
-            className="font-medium text-moss underline decoration-moss/30 underline-offset-4 transition-colors hover:decoration-moss"
+            className="font-medium text-cyan underline decoration-cyan/30 underline-offset-4 transition-colors hover:decoration-cyan"
           >
             {source.label} <span aria-hidden="true">↗</span>
           </a>
@@ -120,7 +120,7 @@ export function NoteRow({
       <span className="label-mono pt-1 text-muted-foreground">{number}</span>
       <span className="flex-1">
         <span className="flex flex-wrap items-center gap-2">
-          <span className="font-display text-xl font-medium tracking-tight text-foreground">
+           <span className="font-display text-xl font-semibold text-foreground">
             {title}
           </span>
           {draft && <DraftBadge>Draft</DraftBadge>}
@@ -128,7 +128,7 @@ export function NoteRow({
         <span className="mt-1 block text-sm leading-relaxed text-muted-foreground">
           {subtitle}
         </span>
-        <span className="label-mono mt-2.5 block text-[0.625rem] text-moss">{kindLabel}</span>
+         <span className="label-mono mt-2.5 block text-[0.625rem] text-cyan">{kindLabel}</span>
       </span>
     </>
   );

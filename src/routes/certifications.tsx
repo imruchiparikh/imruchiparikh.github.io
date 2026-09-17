@@ -4,13 +4,13 @@ import { PageIntro, SectionLabel } from "@/components/site/editorial";
 export const Route = createFileRoute("/certifications")({
   head: () => ({
     meta: [
-      { title: "Certifications — Product Lab" },
+      { title: "Certifications — Ruchi Parikh" },
       {
         name: "description",
         content:
           "AIPMM Certified Digital Product Manager (CDPM) and Certified Scrum Product Owner (CSPO) — kept in perspective.",
       },
-      { property: "og:title", content: "Certifications — Product Lab" },
+      { property: "og:title", content: "Certifications — Ruchi Parikh" },
       {
         property: "og:description",
         content: "AIPMM CDPM and CSPO — kept in perspective.",
@@ -68,12 +68,12 @@ function CertificationsPage() {
         >
           in the notes
         </Link>{" "}
-        and{" "}
+        and in{" "}
         <Link
-          to="/lab/prioritization"
+          to="/workflow"
           className="underline decoration-border underline-offset-4 hover:decoration-foreground"
         >
-          the labs
+          how I approach product work
         </Link>
         .
       </p>

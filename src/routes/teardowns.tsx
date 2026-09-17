@@ -4,13 +4,13 @@ import { PageIntro, SectionLabel, DraftBadge } from "@/components/site/editorial
 export const Route = createFileRoute("/teardowns")({
   head: () => ({
     meta: [
-      { title: "Product Teardowns — Product Lab" },
+      { title: "Product Teardowns — Ruchi Parikh" },
       {
         name: "description",
         content:
           "Outside-in product teardowns by Ruchi Parikh: observed behavior, hypotheses, and what I'd test — clearly separated.",
       },
-      { property: "og:title", content: "Product Teardowns — Product Lab" },
+      { property: "og:title", content: "Product Teardowns — Ruchi Parikh" },
       {
         property: "og:description",
         content: "Outside-in teardowns: observed behavior, hypotheses, and what I'd test — clearly separated.",
@@ -180,11 +180,7 @@ function TeardownsPage() {
           plausible story dress itself up as a finding.
         </p>
         <p className="mt-4 text-sm text-muted-foreground">
-          More teardowns will land here. Have a product in mind? That's what the{" "}
-          <Link to="/lab/metrics" className="underline decoration-border underline-offset-4 hover:decoration-foreground">
-            labs
-          </Link>{" "}
-          are for.
+          More teardowns will land here as I find products with a specific question worth examining.
         </p>
       </div>
     </div>
