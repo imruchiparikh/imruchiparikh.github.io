@@ -16,7 +16,7 @@ Build a multi-page editorial product journal with a restrained ink, paper, moss,
 - Add a compact index of notes, experiments, learning sources, and the “This site is also an experiment” statement without turning the page into a career summary.
 
 ## Thinking pages
-- Product Notes: create the six requested entries as an editorial index. Write complete original content where it relies on public product reasoning; mark experience-dependent pieces as editable drafts.
+- Product Notes: create the six requested entries as an editorial index, then expand with additional source-inspired pieces (more Lenny's Newsletter and Lenny's Podcast reflections) and book reflections for The Mom Test, Think Straight, Build What Matters, and Smart Brevity. Each is an original takeaway in Ruchi's voice — never a summary. Write complete original content where it relies on public product reasoning; mark experience-dependent pieces as editable drafts.
 - Featured Duolingo reflection: cover what caught attention, takeaway, likely misuse, a fictional example, validation questions, and measures. Attribute and link the original Lenny’s Newsletter article without reproducing it.
 - Product Teardowns: start with one replaceable, clearly observational teardown. Separate observed behavior from hypotheses and unknowns.
 - Changed My Mind: add 2–3 modest editable entries using the requested before/now/reflection structure.
