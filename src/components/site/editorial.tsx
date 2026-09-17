@@ -96,20 +96,24 @@ export function SourceAttribution({
   );
 }
 
+export type NoteLink =
+  | { to: "/notes/$slug"; params: { slug: string } }
+  | { to: "/changed-my-mind" };
+
 export function NoteRow({
-  href,
+  link,
   number,
   title,
   subtitle,
   kindLabel,
   draft = false,
 }: {
-  href?: string;
+  link: NoteLink;
   number: string;
   title: string;
   subtitle: string;
   kindLabel: string;
-  draft?: boolean;
+  draft?: boolean | undefined;
 }) {
   const inner = (
     <>
@@ -129,17 +133,25 @@ export function NoteRow({
     </>
   );
 
-  if (href) {
+  if ("params" in link) {
     return (
       <Link
-        to={href}
+        to={link.to}
+        params={link.params}
         className="group flex gap-5 border-b border-border py-6 transition-colors last:border-b-0 hover:bg-card/60"
       >
         {inner}
       </Link>
     );
   }
-  return <div className="flex gap-5 border-b border-border py-6 last:border-b-0">{inner}</div>;
+  return (
+    <Link
+      to={link.to}
+      className="group flex gap-5 border-b border-border py-6 transition-colors last:border-b-0 hover:bg-card/60"
+    >
+      {inner}
+    </Link>
+  );
 }
 
 export function Prose({ children }: { children: ReactNode }) {

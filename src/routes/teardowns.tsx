@@ -25,7 +25,7 @@ export const Route = createFileRoute("/teardowns")({
 const blocks: {
   label: string;
   kind: "observed" | "hypothesis" | "neutral";
-  body: string[] | string[];
+  body?: string[];
   list?: string[];
 }[] = [
   {

@@ -418,5 +418,6 @@ export function getNote(slug: string): Note | undefined {
 }
 
 export function featuredNote(): Note {
-  return notes[0];
+  // The first note is always the featured one; the array is non-empty by construction.
+  return notes[0]!;
 }

@@ -100,7 +100,7 @@ function DimensionSlider({
         max={5}
         step={1}
         value={[value]}
-        onValueChange={(vals) => onChange(vals[0])}
+        onValueChange={(vals) => onChange(vals[0] ?? value)}
         aria-label={label}
         className="w-28"
       />
