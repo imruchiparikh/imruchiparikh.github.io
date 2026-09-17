@@ -10,10 +10,12 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AiSkillsRouteImport } from './routes/ai-skills'
 import { Route as CertificationsRouteImport } from './routes/certifications'
 import { Route as ChangedMyMindRouteImport } from './routes/changed-my-mind'
 import { Route as PathToProductRouteImport } from './routes/path-to-product'
 import { Route as TeardownsRouteImport } from './routes/teardowns'
+import { Route as WorkflowRouteImport } from './routes/workflow'
 import { Route as LabMetricsRouteImport } from './routes/lab.metrics'
 import { Route as LabMvpRouteImport } from './routes/lab.mvp'
 import { Route as LabPrioritizationRouteImport } from './routes/lab.prioritization'
@@ -23,6 +25,11 @@ import { Route as NotesSlugRouteImport } from './routes/notes.$slug'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AiSkillsRoute = AiSkillsRouteImport.update({
+  id: '/ai-skills',
+  path: '/ai-skills',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CertificationsRoute = CertificationsRouteImport.update({
@@ -43,6 +50,11 @@ const PathToProductRoute = PathToProductRouteImport.update({
 const TeardownsRoute = TeardownsRouteImport.update({
   id: '/teardowns',
   path: '/teardowns',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkflowRoute = WorkflowRouteImport.update({
+  id: '/workflow',
+  path: '/workflow',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LabMetricsRoute = LabMetricsRouteImport.update({
@@ -73,10 +85,12 @@ const NotesSlugRoute = NotesSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/ai-skills': typeof AiSkillsRoute
   '/certifications': typeof CertificationsRoute
   '/changed-my-mind': typeof ChangedMyMindRoute
   '/path-to-product': typeof PathToProductRoute
   '/teardowns': typeof TeardownsRoute
+  '/workflow': typeof WorkflowRoute
   '/lab/metrics': typeof LabMetricsRoute
   '/lab/mvp': typeof LabMvpRoute
   '/lab/prioritization': typeof LabPrioritizationRoute
@@ -85,10 +99,12 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/ai-skills': typeof AiSkillsRoute
   '/certifications': typeof CertificationsRoute
   '/changed-my-mind': typeof ChangedMyMindRoute
   '/path-to-product': typeof PathToProductRoute
   '/teardowns': typeof TeardownsRoute
+  '/workflow': typeof WorkflowRoute
   '/lab/metrics': typeof LabMetricsRoute
   '/lab/mvp': typeof LabMvpRoute
   '/lab/prioritization': typeof LabPrioritizationRoute
@@ -98,10 +114,12 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/ai-skills': typeof AiSkillsRoute
   '/certifications': typeof CertificationsRoute
   '/changed-my-mind': typeof ChangedMyMindRoute
   '/path-to-product': typeof PathToProductRoute
   '/teardowns': typeof TeardownsRoute
+  '/workflow': typeof WorkflowRoute
   '/lab/metrics': typeof LabMetricsRoute
   '/lab/mvp': typeof LabMvpRoute
   '/lab/prioritization': typeof LabPrioritizationRoute
@@ -112,10 +130,12 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/ai-skills'
     | '/certifications'
     | '/changed-my-mind'
     | '/path-to-product'
     | '/teardowns'
+    | '/workflow'
     | '/lab/metrics'
     | '/lab/mvp'
     | '/lab/prioritization'
@@ -124,10 +144,12 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/ai-skills'
     | '/certifications'
     | '/changed-my-mind'
     | '/path-to-product'
     | '/teardowns'
+    | '/workflow'
     | '/lab/metrics'
     | '/lab/mvp'
     | '/lab/prioritization'
@@ -136,10 +158,12 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/ai-skills'
     | '/certifications'
     | '/changed-my-mind'
     | '/path-to-product'
     | '/teardowns'
+    | '/workflow'
     | '/lab/metrics'
     | '/lab/mvp'
     | '/lab/prioritization'
@@ -149,10 +173,12 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AiSkillsRoute: typeof AiSkillsRoute
   CertificationsRoute: typeof CertificationsRoute
   ChangedMyMindRoute: typeof ChangedMyMindRoute
   PathToProductRoute: typeof PathToProductRoute
   TeardownsRoute: typeof TeardownsRoute
+  WorkflowRoute: typeof WorkflowRoute
   LabMetricsRoute: typeof LabMetricsRoute
   LabMvpRoute: typeof LabMvpRoute
   LabPrioritizationRoute: typeof LabPrioritizationRoute
@@ -167,6 +193,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ai-skills': {
+      id: '/ai-skills'
+      path: '/ai-skills'
+      fullPath: '/ai-skills'
+      preLoaderRoute: typeof AiSkillsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/certifications': {
@@ -195,6 +228,13 @@ declare module '@tanstack/react-router' {
       path: '/teardowns'
       fullPath: '/teardowns'
       preLoaderRoute: typeof TeardownsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/workflow': {
+      id: '/workflow'
+      path: '/workflow'
+      fullPath: '/workflow'
+      preLoaderRoute: typeof WorkflowRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/lab/metrics': {
@@ -237,10 +277,12 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AiSkillsRoute: AiSkillsRoute,
   CertificationsRoute: CertificationsRoute,
   ChangedMyMindRoute: ChangedMyMindRoute,
   PathToProductRoute: PathToProductRoute,
   TeardownsRoute: TeardownsRoute,
+  WorkflowRoute: WorkflowRoute,
   LabMetricsRoute: LabMetricsRoute,
   LabMvpRoute: LabMvpRoute,
   LabPrioritizationRoute: LabPrioritizationRoute,
