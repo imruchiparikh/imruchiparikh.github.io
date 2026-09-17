@@ -1,22 +1,17 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { notes, featuredNote } from "@/lib/site/notes";
-import { SectionLabel, SourceAttribution, NoteRow } from "@/components/site/editorial";
+import { SectionLabel } from "@/components/site/editorial";
+import { ProductWorkflow } from "@/components/site/product-workflow";
+import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Product Lab — Notes, experiments & product thinking" },
-      {
-        name: "description",
-        content:
-          "An interactive product-thinking journal by Ruchi Parikh: notes, teardowns, and hands-on product experiments.",
-      },
-      { property: "og:title", content: "Product Lab — Notes, experiments & product thinking" },
-      {
-        property: "og:description",
-        content:
-          "Exploring why products work, where they struggle, and what I'd try next. By Ruchi Parikh.",
-      },
+      { title: "Ruchi Parikh — Product Thinking & AI" },
+      { name: "description", content: "Ruchi Parikh writes about product decisions, AI usefulness, metrics, and what quality engineering taught her to notice." },
+      { property: "og:title", content: "Ruchi Parikh — Product Thinking & AI" },
+      { property: "og:description", content: "Product notes, AI questions, and a quality-led approach to product thinking." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -24,180 +19,85 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const labs = [
-  {
-    to: "/lab/prioritization",
-    label: "Lab 01",
-    title: "Prioritization Lab",
-    blurb:
-      "Six improvements, limited capacity, four adjustable inputs. Watch the ranking — and the story behind it — shift.",
-  },
-  {
-    to: "/lab/metrics",
-    label: "Lab 02",
-    title: "Metrics Lab",
-    blurb:
-      "A fictional usage drop. Explore the questions a product person would ask before trusting any explanation.",
-  },
-  {
-    to: "/lab/mvp",
-    label: "Lab 03",
-    title: "MVP Lab",
-    blurb:
-      "Eight features, one risky assumption. Choose the smallest product that still produces a real answer.",
-  },
+const sideNotes = [notes[1], notes[2], notes[3]].filter((note) => note !== undefined);
+
+const topics = [
+  { label: "Product fundamentals", description: "Problems, trade-offs, metrics, and why the obvious feature is rarely the whole answer.", note: notes[1] },
+  { label: "AI & emerging products", description: "What makes an AI feature useful after the first impressive demo.", note: notes[2] },
+  { label: "Quality as product insight", description: "How testing, APIs, and data validation sharpen product questions.", note: notes[4] },
+  { label: "Books & conversations", description: "Ideas from The Mom Test, Smart Brevity, and product conversations—applied, not summarized.", note: notes[5] },
 ];
 
 function Index() {
   const featured = featuredNote();
-  const recent = notes.slice(1, 4);
 
   return (
-    <div className="mx-auto max-w-5xl px-5 sm:px-8">
-      {/* Hero */}
-      <section className="pb-16 pt-20 sm:pt-28">
-        <SectionLabel>A product-thinking journal</SectionLabel>
-        <h1 className="mt-5 font-display text-6xl font-medium leading-[0.95] tracking-tight text-foreground sm:text-7xl">
-          Product Lab
+    <div className="mx-auto max-w-6xl px-5 sm:px-8">
+      <section className="flex min-h-[72vh] flex-col justify-center border-b border-border py-20 text-center sm:py-28">
+        <p className="label-mono text-cyan">Quality engineer · Product thinker · AI curious</p>
+        <h1 className="mt-7 font-display text-6xl font-bold leading-none text-foreground sm:text-8xl lg:text-9xl">
+          Hi, I&apos;m <span className="text-cyan">Ruchi.</span>
         </h1>
-        <p className="mt-5 font-display text-2xl font-normal italic text-foreground/90 sm:text-3xl">
-          Notes, experiments & product thinking.
+        <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg">
+          I break software for a living and overthink products for fun.
         </p>
-        <p className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
-          I like understanding why products work, where they struggle, and what I'd try next.
+        <p className="mx-auto mt-2 max-w-2xl text-sm leading-6 text-muted-foreground">
+          This is where I write down what I notice about useful products, AI, metrics, and the
+          questions worth asking before anyone builds.
         </p>
-        <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground">
-          I come from six years in software quality engineering — breaking things carefully, it
-          turns out, is good training for asking better product questions. This is where I do
-          that work in the open.
-        </p>
-        <div className="mt-8 flex flex-wrap items-center gap-3">
-          <Link
-            to="/notes"
-            className="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            Explore the Lab
-          </Link>
-          <Link
-            to="/lab/prioritization"
-            className="inline-flex items-center gap-2 rounded-md border border-border px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-foreground/35"
-          >
-            Try an experiment
-          </Link>
+        <div className="mt-9 flex flex-wrap justify-center gap-3">
+          <Button asChild size="lg"><Link to="/notes">Read the blog <ArrowRight /></Link></Button>
+          <Button asChild size="lg" variant="outline"><Link to="/workflow">See my approach</Link></Button>
         </div>
       </section>
 
-      {/* Featured note */}
-      <section className="border-t border-border py-14">
-        <SectionLabel>Featured note</SectionLabel>
-        <div className="mt-6 grid gap-8 md:grid-cols-5">
-          <div className="md:col-span-3">
-            <p className="label-mono text-moss">{featured.number}</p>
-            <Link
-              to="/notes/$slug"
-              params={{ slug: featured.slug }}
-              className="group mt-3 block"
-            >
-              <h2 className="font-display text-3xl font-medium leading-tight tracking-tight text-foreground group-hover:underline decoration-1 underline-offset-4 sm:text-4xl">
-                {featured.title}
-              </h2>
+      <section className="py-20">
+        <div className="flex items-end justify-between gap-6">
+          <div><SectionLabel>Selected thinking</SectionLabel><h2 className="mt-3 font-display text-3xl font-semibold text-foreground sm:text-4xl">Start with the mechanism.</h2></div>
+          <Link to="/notes" className="hidden items-center gap-2 text-sm text-cyan sm:flex">Browse all writing <ArrowUpRight className="size-4" /></Link>
+        </div>
+        <div className="mt-10 grid gap-10 border-t border-border pt-10 lg:grid-cols-12">
+          <article className="lg:col-span-7">
+            <p className="label-mono text-cyan">Featured · {featured.kindLabel}</p>
+            <Link to="/notes/$slug" params={{ slug: featured.slug }} className="group mt-5 block">
+              <h3 className="max-w-3xl font-display text-4xl font-semibold leading-tight text-foreground transition-colors group-hover:text-cyan sm:text-5xl">{featured.title}</h3>
+              <p className="mt-5 max-w-xl text-base leading-7 text-muted-foreground">{featured.subtitle}</p>
+              <span className="mt-7 inline-flex items-center gap-2 text-sm font-medium text-cyan">Read the reflection <ArrowUpRight className="size-4" /></span>
             </Link>
-            <p className="mt-3 max-w-lg text-base leading-relaxed text-muted-foreground">
-              {featured.subtitle}
-            </p>
-            <Link
-              to="/notes/$slug"
-              params={{ slug: featured.slug }}
-              className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-foreground underline decoration-border underline-offset-4 transition-colors hover:decoration-foreground"
-            >
-              Read the note
-              <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">
-                →
-              </span>
+          </article>
+          <div className="space-y-0 border-t border-border lg:col-span-5">
+            {sideNotes.map((note) => (
+              <Link key={note.slug} to="/notes/$slug" params={{ slug: note.slug }} className="group grid grid-cols-[3rem_1fr] gap-4 border-b border-border py-6">
+                <span className="label-mono text-muted-foreground">{note.number}</span>
+                <span><span className="block font-display text-lg font-semibold text-foreground group-hover:text-cyan">{note.title}</span><span className="mt-2 block text-sm leading-6 text-muted-foreground">{note.subtitle}</span></span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-border py-20">
+        <SectionLabel>Browse by topic</SectionLabel>
+        <div className="mt-8 grid border-l border-t border-border sm:grid-cols-2">
+          {topics.map((topic, index) => topic.note ? (
+            <Link key={topic.label} to="/notes/$slug" params={{ slug: topic.note.slug }} className="card-hover min-h-56 border-b border-r border-border p-6 sm:p-8">
+              <p className="label-mono text-cyan">0{index + 1}</p>
+              <h3 className="mt-8 font-display text-2xl font-semibold text-foreground">{topic.label}</h3>
+              <p className="mt-3 max-w-md text-sm leading-6 text-muted-foreground">{topic.description}</p>
             </Link>
-          </div>
-          <div className="md:col-span-2">
-            <SourceAttribution source={featured.source!} />
-          </div>
+          ) : null)}
         </div>
       </section>
 
-      {/* Recent notes */}
-      <section className="border-t border-border py-14">
-        <div className="flex items-baseline justify-between gap-4">
-          <SectionLabel>Product notes</SectionLabel>
-          <Link
-            to="/notes"
-            className="text-sm text-muted-foreground underline decoration-border underline-offset-4 hover:text-foreground hover:decoration-foreground"
-          >
-            All notes
-          </Link>
-        </div>
-        <div className="mt-6">
-          {recent.map((note) => (
-            <NoteRow
-              key={note.slug}
-              link={{ to: "/notes/$slug", params: { slug: note.slug } }}
-              number={note.number}
-              title={note.title}
-              subtitle={note.subtitle}
-              kindLabel={note.kindLabel}
-              draft={note.draft}
-            />
-          ))}
-        </div>
+      <section className="border-t border-border py-20">
+        <div className="mb-10 max-w-2xl"><SectionLabel>How I approach the work</SectionLabel><h2 className="mt-3 font-display text-3xl font-semibold text-foreground sm:text-4xl">From a fuzzy problem to a useful learning loop.</h2><p className="mt-4 text-muted-foreground">Click a stage for the short version. This is an approach I am practicing—not a claim about products I have launched.</p></div>
+        <ProductWorkflow />
+        <Link to="/workflow" className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-cyan">See the full workflow <ArrowUpRight className="size-4" /></Link>
       </section>
 
-      {/* Labs */}
-      <section className="border-t border-border py-14">
-        <SectionLabel>Experiments — try them</SectionLabel>
-        <div className="mt-6 grid gap-4 sm:grid-cols-3">
-          {labs.map((lab) => (
-            <Link
-              key={lab.to}
-              to={lab.to}
-              className="card-hover flex flex-col rounded-lg border border-border bg-card p-5"
-            >
-              <span className="label-mono text-moss">{lab.label}</span>
-              <span className="mt-3 font-display text-lg font-medium tracking-tight text-foreground">
-                {lab.title}
-              </span>
-              <span className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
-                {lab.blurb}
-              </span>
-              <span className="mt-4 text-sm font-medium text-foreground">Open →</span>
-            </Link>
-          ))}
-        </div>
-        <p className="mt-4 text-xs text-muted-foreground">
-          Every experiment uses a fictional product scenario. The point is the thinking, not the
-          answer.
-        </p>
-      </section>
-
-      {/* This site is also an experiment */}
-      <section className="border-t border-border py-14">
-        <div className="grid gap-8 md:grid-cols-5">
-          <div className="md:col-span-2">
-            <SectionLabel>This site is also an experiment</SectionLabel>
-            <p className="mt-4 max-w-sm font-display text-2xl font-medium leading-snug tracking-tight text-foreground">
-              I didn't want to build another portfolio that simply lists skills and certifications.
-            </p>
-          </div>
-          <div className="md:col-span-3">
-            <p className="max-w-lg text-base leading-relaxed text-muted-foreground">
-              So I treated this site as a small product:
-            </p>
-            <p className="label-mono mt-3 text-foreground">
-              Problem → MVP → Build → Learn → Iterate
-            </p>
-            <p className="mt-4 max-w-lg text-sm leading-relaxed text-muted-foreground">
-              The problem: portfolios tend to claim; this one tries to show. The MVP is what
-              you're looking at. What I'll learn, and what changes next, is the part I can't fake
-              in advance.
-            </p>
-          </div>
-        </div>
+      <section className="grid gap-8 border-t border-border py-20 md:grid-cols-[0.8fr_1.2fr]">
+        <div><SectionLabel>AI & Product Skills</SectionLabel><h2 className="mt-3 font-display text-3xl font-semibold text-foreground">Useful after the demo.</h2></div>
+        <div><p className="max-w-2xl text-lg leading-8 text-muted-foreground">I focus on problem fit, source quality, evaluation, failure states, and whether the feature earns repeat use. My background in automation, APIs, SQL, data validation, performance testing, and AI/RAG helps me ask where an answer came from—and what could fail upstream.</p><Link to="/ai-skills" className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-cyan">Explore the skill map <ArrowUpRight className="size-4" /></Link></div>
       </section>
     </div>
   );
