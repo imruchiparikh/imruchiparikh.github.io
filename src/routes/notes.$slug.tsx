@@ -60,6 +60,10 @@ function NotePage() {
           {note.title}
         </h1>
         <p className="mt-4 text-lg leading-relaxed text-muted-foreground">{note.subtitle}</p>
+        <div className="mt-5 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+          <span className="rounded-sm bg-cyan/12 px-2.5 py-1 font-semibold text-cyan">{note.tag}</span>
+          <span>Ruchi</span><span aria-hidden="true">·</span><span>{note.date}</span><span aria-hidden="true">·</span><span>{note.readTime}</span>
+        </div>
       </div>
 
       {note.source && (

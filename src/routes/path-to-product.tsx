@@ -49,14 +49,14 @@ const steps = [
     body: "The Scrum side of the same curiosity: how product decisions survive contact with delivery reality. Backlogs, priorities, and the discipline of choosing what not to do.",
   },
   {
-    label: "4-Month Internal PM Program",
-    title: "Going deeper, where I work",
-    body: "A four-month product management program inside my current company — coursework, case work, and a chance to test whether the thinking holds up under real constraints. Still processing what it changed; the honest draft lives in my notes.",
+    label: "May 6 – August 31 · Curinos",
+    title: "Four months of supported product exposure",
+    body: "Curinos gave me space to learn by contributing alongside product teams—not an internship and not a Product Manager role. I joined client meetings, demonstrated app features directly to clients, led two features with support and contributed to others, presented in product roadmap reviews, and took part in problem and solution discovery. I also interviewed stakeholders, created synthesis documents, mapped user flows, wrote PRDs, and collaborated with design, engineering, and data science through delivery.",
   },
   {
     label: "Now",
     title: "Continuing to build product thinking",
-    body: "I haven't held a Product Manager title yet, and this site doesn't pretend otherwise. What I have is a technical foundation that most product thinking would benefit from, a deliberate and growing practice, and this lab — where the thinking has to survive being written down. The next step is doing it for real. This site is part of how I get there.",
+    body: "The experience at Curinos—plus a two-day product training workshop on practical methodologies—made the discipline much more concrete. I haven't held a Product Manager title, and this site doesn't pretend otherwise. I am continuing to build on a technical foundation, supported product exposure, and the habit of making my thinking visible enough to question.",
   },
 ];
 
@@ -106,8 +106,8 @@ function PathPage() {
 
       <div className="mt-6 rounded-md border border-border bg-card p-6">
         <p className="max-w-xl text-sm leading-relaxed text-muted-foreground">
-          The short version: I'm not a Product Manager yet. I'm a quality engineer with six years
-          of systems thinking, two product certifications, a four-month PM program, and a habit of
+          The short version: I'm a quality engineer with six years
+          of systems thinking, two product certifications, four months of supported product exposure at Curinos, and a habit of
           writing down what I think —{" "}
           <Link
             to="/notes"
