@@ -4,13 +4,13 @@ import { PageIntro } from "@/components/site/editorial";
 export const Route = createFileRoute("/path-to-product")({
   head: () => ({
     meta: [
-      { title: "My Path to Product — Product Lab" },
+      { title: "My Path to Product — Ruchi Parikh" },
       {
         name: "description",
         content:
           "From six years in software quality engineering to deliberate product thinking — the honest path, in progress.",
       },
-      { property: "og:title", content: "My Path to Product — Product Lab" },
+      { property: "og:title", content: "My Path to Product — Ruchi Parikh" },
       {
         property: "og:description",
         content: "From quality engineering to deliberate product thinking — the honest path, in progress.",

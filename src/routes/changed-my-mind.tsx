@@ -4,13 +4,13 @@ import { PageIntro, SectionLabel } from "@/components/site/editorial";
 export const Route = createFileRoute("/changed-my-mind")({
   head: () => ({
     meta: [
-      { title: "What I Changed My Mind About — Product Lab" },
+      { title: "What I Changed My Mind About — Ruchi Parikh" },
       {
         name: "description",
         content:
           "Ongoing, honest updates to my own product beliefs: what I used to think, what I think now, and what changed it.",
       },
-      { property: "og:title", content: "What I Changed My Mind About — Product Lab" },
+      { property: "og:title", content: "What I Changed My Mind About — Ruchi Parikh" },
       {
         property: "og:description",
         content: "Ongoing, honest updates to my own product beliefs.",

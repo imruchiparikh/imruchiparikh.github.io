@@ -31,7 +31,7 @@ function NotFoundComponent() {
             to="/"
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            Back to Product Lab
+            Back to Ruchi’s site
           </Link>
         </div>
       </div>
@@ -82,9 +82,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Product Lab — Ruchi Parikh" },
+      { title: "Ruchi Parikh — Product Thinking & AI" },
       { name: "description", content: "Notes, experiments & product thinking by Ruchi Parikh." },
-      { property: "og:title", content: "Product Lab — Ruchi Parikh" },
+      { property: "og:title", content: "Ruchi Parikh — Product Thinking & AI" },
       {
         property: "og:description",
         content: "Notes, experiments & product thinking by Ruchi Parikh.",

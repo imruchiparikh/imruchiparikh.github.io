@@ -17,7 +17,7 @@ export const Route = createFileRoute("/notes/$slug")({
     if (!loaderData) {
       return {
         meta: [
-          { title: "Note not found — Product Lab" },
+          { title: "Note not found — Ruchi Parikh" },
           { name: "robots", content: "noindex" },
         ],
       };
@@ -25,9 +25,9 @@ export const Route = createFileRoute("/notes/$slug")({
     const { note } = loaderData;
     return {
       meta: [
-        { title: `${note.title} — Product Lab` },
+        { title: `${note.title} — Ruchi Parikh` },
         { name: "description", content: note.subtitle },
-        { property: "og:title", content: `${note.title} — Product Lab` },
+        { property: "og:title", content: `${note.title} — Ruchi Parikh` },
         { property: "og:description", content: note.subtitle },
         { property: "og:type", content: "article" },
         { name: "twitter:card", content: "summary_large_image" },

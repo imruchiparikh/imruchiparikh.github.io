@@ -4,13 +4,13 @@ import { PageIntro, SectionLabel, DraftBadge } from "@/components/site/editorial
 export const Route = createFileRoute("/teardowns")({
   head: () => ({
     meta: [
-      { title: "Product Teardowns — Product Lab" },
+      { title: "Product Teardowns — Ruchi Parikh" },
       {
         name: "description",
         content:
           "Outside-in product teardowns by Ruchi Parikh: observed behavior, hypotheses, and what I'd test — clearly separated.",
       },
-      { property: "og:title", content: "Product Teardowns — Product Lab" },
+      { property: "og:title", content: "Product Teardowns — Ruchi Parikh" },
       {
         property: "og:description",
         content: "Outside-in teardowns: observed behavior, hypotheses, and what I'd test — clearly separated.",

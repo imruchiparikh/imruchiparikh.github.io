@@ -9,7 +9,7 @@ export function SiteFooter() {
       <div className="mx-auto flex max-w-6xl flex-col gap-6 px-5 py-10 sm:flex-row sm:items-end sm:justify-between sm:px-8">
         <div>
           <p className="font-display text-lg font-semibold tracking-tight text-foreground">
-            Ruchi Parikh <span className="font-normal text-muted-foreground">· Product Lab</span>
+            Ruchi Parikh
           </p>
           <p className="mt-1 max-w-md text-sm text-muted-foreground">
              Product notes, AI questions, and the thinking behind how I would approach product work.

@@ -5,9 +5,9 @@ import { ProductWorkflow } from "@/components/site/product-workflow";
 export const Route = createFileRoute("/workflow")({
   head: () => ({
     meta: [
-      { title: "PRD to Product Workflow — Product Lab" },
+      { title: "PRD to Product Workflow — Ruchi Parikh" },
       { name: "description", content: "How Ruchi Parikh would move from a product problem to a measurable learning loop." },
-      { property: "og:title", content: "PRD to Product Workflow — Product Lab" },
+      { property: "og:title", content: "PRD to Product Workflow — Ruchi Parikh" },
       { property: "og:description", content: "A clear, clickable approach from problem framing through product learning." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

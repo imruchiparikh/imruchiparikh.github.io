@@ -5,9 +5,9 @@ import { PageIntro, SectionLabel } from "@/components/site/editorial";
 export const Route = createFileRoute("/ai-skills")({
   head: () => ({
     meta: [
-      { title: "AI & Product Skills — Product Lab" },
+      { title: "AI & Product Skills — Ruchi Parikh" },
       { name: "description", content: "A grounded view of the AI product questions Ruchi Parikh is exploring through quality, data, APIs, and RAG." },
-      { property: "og:title", content: "AI & Product Skills — Product Lab" },
+      { property: "og:title", content: "AI & Product Skills — Ruchi Parikh" },
       { property: "og:description", content: "AI product thinking grounded in quality, data validation, APIs, and RAG." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
