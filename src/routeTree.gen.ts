@@ -14,6 +14,9 @@ import { Route as CertificationsRouteImport } from './routes/certifications'
 import { Route as ChangedMyMindRouteImport } from './routes/changed-my-mind'
 import { Route as PathToProductRouteImport } from './routes/path-to-product'
 import { Route as TeardownsRouteImport } from './routes/teardowns'
+import { Route as LabMetricsRouteImport } from './routes/lab.metrics'
+import { Route as LabMvpRouteImport } from './routes/lab.mvp'
+import { Route as LabPrioritizationRouteImport } from './routes/lab.prioritization'
 import { Route as NotesIndexRouteImport } from './routes/notes.index'
 import { Route as NotesSlugRouteImport } from './routes/notes.$slug'
 
@@ -42,6 +45,21 @@ const TeardownsRoute = TeardownsRouteImport.update({
   path: '/teardowns',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LabMetricsRoute = LabMetricsRouteImport.update({
+  id: '/lab/metrics',
+  path: '/lab/metrics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LabMvpRoute = LabMvpRouteImport.update({
+  id: '/lab/mvp',
+  path: '/lab/mvp',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LabPrioritizationRoute = LabPrioritizationRouteImport.update({
+  id: '/lab/prioritization',
+  path: '/lab/prioritization',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const NotesIndexRoute = NotesIndexRouteImport.update({
   id: '/notes/',
   path: '/notes/',
@@ -59,6 +77,9 @@ export interface FileRoutesByFullPath {
   '/changed-my-mind': typeof ChangedMyMindRoute
   '/path-to-product': typeof PathToProductRoute
   '/teardowns': typeof TeardownsRoute
+  '/lab/metrics': typeof LabMetricsRoute
+  '/lab/mvp': typeof LabMvpRoute
+  '/lab/prioritization': typeof LabPrioritizationRoute
   '/notes/$slug': typeof NotesSlugRoute
   '/notes/': typeof NotesIndexRoute
 }
@@ -68,6 +89,9 @@ export interface FileRoutesByTo {
   '/changed-my-mind': typeof ChangedMyMindRoute
   '/path-to-product': typeof PathToProductRoute
   '/teardowns': typeof TeardownsRoute
+  '/lab/metrics': typeof LabMetricsRoute
+  '/lab/mvp': typeof LabMvpRoute
+  '/lab/prioritization': typeof LabPrioritizationRoute
   '/notes/$slug': typeof NotesSlugRoute
   '/notes': typeof NotesIndexRoute
 }
@@ -78,6 +102,9 @@ export interface FileRoutesById {
   '/changed-my-mind': typeof ChangedMyMindRoute
   '/path-to-product': typeof PathToProductRoute
   '/teardowns': typeof TeardownsRoute
+  '/lab/metrics': typeof LabMetricsRoute
+  '/lab/mvp': typeof LabMvpRoute
+  '/lab/prioritization': typeof LabPrioritizationRoute
   '/notes/$slug': typeof NotesSlugRoute
   '/notes/': typeof NotesIndexRoute
 }
@@ -89,6 +116,9 @@ export interface FileRouteTypes {
     | '/changed-my-mind'
     | '/path-to-product'
     | '/teardowns'
+    | '/lab/metrics'
+    | '/lab/mvp'
+    | '/lab/prioritization'
     | '/notes/$slug'
     | '/notes/'
   fileRoutesByTo: FileRoutesByTo
@@ -98,6 +128,9 @@ export interface FileRouteTypes {
     | '/changed-my-mind'
     | '/path-to-product'
     | '/teardowns'
+    | '/lab/metrics'
+    | '/lab/mvp'
+    | '/lab/prioritization'
     | '/notes/$slug'
     | '/notes'
   id:
@@ -107,6 +140,9 @@ export interface FileRouteTypes {
     | '/changed-my-mind'
     | '/path-to-product'
     | '/teardowns'
+    | '/lab/metrics'
+    | '/lab/mvp'
+    | '/lab/prioritization'
     | '/notes/$slug'
     | '/notes/'
   fileRoutesById: FileRoutesById
@@ -117,6 +153,9 @@ export interface RootRouteChildren {
   ChangedMyMindRoute: typeof ChangedMyMindRoute
   PathToProductRoute: typeof PathToProductRoute
   TeardownsRoute: typeof TeardownsRoute
+  LabMetricsRoute: typeof LabMetricsRoute
+  LabMvpRoute: typeof LabMvpRoute
+  LabPrioritizationRoute: typeof LabPrioritizationRoute
   NotesSlugRoute: typeof NotesSlugRoute
   NotesIndexRoute: typeof NotesIndexRoute
 }
@@ -158,6 +197,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TeardownsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/lab/metrics': {
+      id: '/lab/metrics'
+      path: '/lab/metrics'
+      fullPath: '/lab/metrics'
+      preLoaderRoute: typeof LabMetricsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lab/mvp': {
+      id: '/lab/mvp'
+      path: '/lab/mvp'
+      fullPath: '/lab/mvp'
+      preLoaderRoute: typeof LabMvpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lab/prioritization': {
+      id: '/lab/prioritization'
+      path: '/lab/prioritization'
+      fullPath: '/lab/prioritization'
+      preLoaderRoute: typeof LabPrioritizationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/notes/': {
       id: '/notes/'
       path: '/notes'
@@ -181,6 +241,9 @@ const rootRouteChildren: RootRouteChildren = {
   ChangedMyMindRoute: ChangedMyMindRoute,
   PathToProductRoute: PathToProductRoute,
   TeardownsRoute: TeardownsRoute,
+  LabMetricsRoute: LabMetricsRoute,
+  LabMvpRoute: LabMvpRoute,
+  LabPrioritizationRoute: LabPrioritizationRoute,
   NotesSlugRoute: NotesSlugRoute,
   NotesIndexRoute: NotesIndexRoute,
 }
