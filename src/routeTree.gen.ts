@@ -10,33 +10,154 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CertificationsRouteImport } from './routes/certifications'
+import { Route as ChangedMyMindRouteImport } from './routes/changed-my-mind'
+import { Route as PathToProductRouteImport } from './routes/path-to-product'
+import { Route as TeardownsRouteImport } from './routes/teardowns'
+import { Route as LabMetricsRouteImport } from './routes/lab.metrics'
+import { Route as LabMvpRouteImport } from './routes/lab.mvp'
+import { Route as LabPrioritizationRouteImport } from './routes/lab.prioritization'
+import { Route as NotesIndexRouteImport } from './routes/notes.index'
+import { Route as NotesSlugRouteImport } from './routes/notes.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CertificationsRoute = CertificationsRouteImport.update({
+  id: '/certifications',
+  path: '/certifications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ChangedMyMindRoute = ChangedMyMindRouteImport.update({
+  id: '/changed-my-mind',
+  path: '/changed-my-mind',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PathToProductRoute = PathToProductRouteImport.update({
+  id: '/path-to-product',
+  path: '/path-to-product',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeardownsRoute = TeardownsRouteImport.update({
+  id: '/teardowns',
+  path: '/teardowns',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LabMetricsRoute = LabMetricsRouteImport.update({
+  id: '/lab/metrics',
+  path: '/lab/metrics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LabMvpRoute = LabMvpRouteImport.update({
+  id: '/lab/mvp',
+  path: '/lab/mvp',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LabPrioritizationRoute = LabPrioritizationRouteImport.update({
+  id: '/lab/prioritization',
+  path: '/lab/prioritization',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NotesIndexRoute = NotesIndexRouteImport.update({
+  id: '/notes/',
+  path: '/notes/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NotesSlugRoute = NotesSlugRouteImport.update({
+  id: '/notes/$slug',
+  path: '/notes/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/certifications': typeof CertificationsRoute
+  '/changed-my-mind': typeof ChangedMyMindRoute
+  '/path-to-product': typeof PathToProductRoute
+  '/teardowns': typeof TeardownsRoute
+  '/lab/metrics': typeof LabMetricsRoute
+  '/lab/mvp': typeof LabMvpRoute
+  '/lab/prioritization': typeof LabPrioritizationRoute
+  '/notes/$slug': typeof NotesSlugRoute
+  '/notes/': typeof NotesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/certifications': typeof CertificationsRoute
+  '/changed-my-mind': typeof ChangedMyMindRoute
+  '/path-to-product': typeof PathToProductRoute
+  '/teardowns': typeof TeardownsRoute
+  '/lab/metrics': typeof LabMetricsRoute
+  '/lab/mvp': typeof LabMvpRoute
+  '/lab/prioritization': typeof LabPrioritizationRoute
+  '/notes/$slug': typeof NotesSlugRoute
+  '/notes': typeof NotesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/certifications': typeof CertificationsRoute
+  '/changed-my-mind': typeof ChangedMyMindRoute
+  '/path-to-product': typeof PathToProductRoute
+  '/teardowns': typeof TeardownsRoute
+  '/lab/metrics': typeof LabMetricsRoute
+  '/lab/mvp': typeof LabMvpRoute
+  '/lab/prioritization': typeof LabPrioritizationRoute
+  '/notes/$slug': typeof NotesSlugRoute
+  '/notes/': typeof NotesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/certifications'
+    | '/changed-my-mind'
+    | '/path-to-product'
+    | '/teardowns'
+    | '/lab/metrics'
+    | '/lab/mvp'
+    | '/lab/prioritization'
+    | '/notes/$slug'
+    | '/notes/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/certifications'
+    | '/changed-my-mind'
+    | '/path-to-product'
+    | '/teardowns'
+    | '/lab/metrics'
+    | '/lab/mvp'
+    | '/lab/prioritization'
+    | '/notes/$slug'
+    | '/notes'
+  id:
+    | '__root__'
+    | '/'
+    | '/certifications'
+    | '/changed-my-mind'
+    | '/path-to-product'
+    | '/teardowns'
+    | '/lab/metrics'
+    | '/lab/mvp'
+    | '/lab/prioritization'
+    | '/notes/$slug'
+    | '/notes/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CertificationsRoute: typeof CertificationsRoute
+  ChangedMyMindRoute: typeof ChangedMyMindRoute
+  PathToProductRoute: typeof PathToProductRoute
+  TeardownsRoute: typeof TeardownsRoute
+  LabMetricsRoute: typeof LabMetricsRoute
+  LabMvpRoute: typeof LabMvpRoute
+  LabPrioritizationRoute: typeof LabPrioritizationRoute
+  NotesSlugRoute: typeof NotesSlugRoute
+  NotesIndexRoute: typeof NotesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +169,83 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/certifications': {
+      id: '/certifications'
+      path: '/certifications'
+      fullPath: '/certifications'
+      preLoaderRoute: typeof CertificationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/changed-my-mind': {
+      id: '/changed-my-mind'
+      path: '/changed-my-mind'
+      fullPath: '/changed-my-mind'
+      preLoaderRoute: typeof ChangedMyMindRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/path-to-product': {
+      id: '/path-to-product'
+      path: '/path-to-product'
+      fullPath: '/path-to-product'
+      preLoaderRoute: typeof PathToProductRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/teardowns': {
+      id: '/teardowns'
+      path: '/teardowns'
+      fullPath: '/teardowns'
+      preLoaderRoute: typeof TeardownsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lab/metrics': {
+      id: '/lab/metrics'
+      path: '/lab/metrics'
+      fullPath: '/lab/metrics'
+      preLoaderRoute: typeof LabMetricsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lab/mvp': {
+      id: '/lab/mvp'
+      path: '/lab/mvp'
+      fullPath: '/lab/mvp'
+      preLoaderRoute: typeof LabMvpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lab/prioritization': {
+      id: '/lab/prioritization'
+      path: '/lab/prioritization'
+      fullPath: '/lab/prioritization'
+      preLoaderRoute: typeof LabPrioritizationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/notes/': {
+      id: '/notes/'
+      path: '/notes'
+      fullPath: '/notes/'
+      preLoaderRoute: typeof NotesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/notes/$slug': {
+      id: '/notes/$slug'
+      path: '/notes/$slug'
+      fullPath: '/notes/$slug'
+      preLoaderRoute: typeof NotesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CertificationsRoute: CertificationsRoute,
+  ChangedMyMindRoute: ChangedMyMindRoute,
+  PathToProductRoute: PathToProductRoute,
+  TeardownsRoute: TeardownsRoute,
+  LabMetricsRoute: LabMetricsRoute,
+  LabMvpRoute: LabMvpRoute,
+  LabPrioritizationRoute: LabPrioritizationRoute,
+  NotesSlugRoute: NotesSlugRoute,
+  NotesIndexRoute: NotesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
