@@ -103,7 +103,8 @@ function NotePage() {
       <nav className="mt-16 flex flex-col gap-3 border-t border-border pt-8 sm:flex-row sm:justify-between">
         {prev ? (
           <Link
-            to={`/notes/${prev.slug}`}
+            to="/notes/$slug"
+            params={{ slug: prev.slug }}
             className="group text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
             <span className="mr-1.5 inline-block transition-transform group-hover:-translate-x-0.5" aria-hidden="true">
@@ -116,7 +117,8 @@ function NotePage() {
         )}
         {next ? (
           <Link
-            to={`/notes/${next.slug}`}
+            to="/notes/$slug"
+            params={{ slug: next.slug }}
             className="group text-sm text-muted-foreground transition-colors hover:text-foreground sm:text-right"
           >
             {next.title}

@@ -40,7 +40,7 @@ function NotesIndex() {
         {notes.map((note) => (
           <NoteRow
             key={note.slug}
-            href={`/notes/${note.slug}`}
+            link={{ to: "/notes/$slug", params: { slug: note.slug } }}
             number={note.number}
             title={note.title}
             subtitle={note.subtitle}
@@ -49,7 +49,7 @@ function NotesIndex() {
           />
         ))}
         <NoteRow
-          href={notesIndexEntry.linkTo}
+          link={{ to: "/changed-my-mind" }}
           number={notesIndexEntry.number}
           title={notesIndexEntry.title}
           subtitle={notesIndexEntry.subtitle}

@@ -93,7 +93,11 @@ function Index() {
         <div className="mt-6 grid gap-8 md:grid-cols-5">
           <div className="md:col-span-3">
             <p className="label-mono text-moss">{featured.number}</p>
-            <Link to={`/notes/${featured.slug}`} className="group mt-3 block">
+            <Link
+              to="/notes/$slug"
+              params={{ slug: featured.slug }}
+              className="group mt-3 block"
+            >
               <h2 className="font-display text-3xl font-medium leading-tight tracking-tight text-foreground group-hover:underline decoration-1 underline-offset-4 sm:text-4xl">
                 {featured.title}
               </h2>
@@ -102,7 +106,8 @@ function Index() {
               {featured.subtitle}
             </p>
             <Link
-              to={`/notes/${featured.slug}`}
+              to="/notes/$slug"
+              params={{ slug: featured.slug }}
               className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-foreground underline decoration-border underline-offset-4 transition-colors hover:decoration-foreground"
             >
               Read the note
@@ -132,7 +137,7 @@ function Index() {
           {recent.map((note) => (
             <NoteRow
               key={note.slug}
-              href={`/notes/${note.slug}`}
+              link={{ to: "/notes/$slug", params: { slug: note.slug } }}
               number={note.number}
               title={note.title}
               subtitle={note.subtitle}
