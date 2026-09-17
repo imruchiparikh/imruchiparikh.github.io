@@ -10,12 +10,36 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CertificationsRouteImport } from './routes/certifications'
+import { Route as ChangedMyMindRouteImport } from './routes/changed-my-mind'
+import { Route as PathToProductRouteImport } from './routes/path-to-product'
+import { Route as TeardownsRouteImport } from './routes/teardowns'
 import { Route as NotesIndexRouteImport } from './routes/notes.index'
 import { Route as NotesSlugRouteImport } from './routes/notes.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CertificationsRoute = CertificationsRouteImport.update({
+  id: '/certifications',
+  path: '/certifications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ChangedMyMindRoute = ChangedMyMindRouteImport.update({
+  id: '/changed-my-mind',
+  path: '/changed-my-mind',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PathToProductRoute = PathToProductRouteImport.update({
+  id: '/path-to-product',
+  path: '/path-to-product',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeardownsRoute = TeardownsRouteImport.update({
+  id: '/teardowns',
+  path: '/teardowns',
   getParentRoute: () => rootRouteImport,
 } as any)
 const NotesIndexRoute = NotesIndexRouteImport.update({
@@ -31,30 +55,68 @@ const NotesSlugRoute = NotesSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/certifications': typeof CertificationsRoute
+  '/changed-my-mind': typeof ChangedMyMindRoute
+  '/path-to-product': typeof PathToProductRoute
+  '/teardowns': typeof TeardownsRoute
   '/notes/$slug': typeof NotesSlugRoute
   '/notes/': typeof NotesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/certifications': typeof CertificationsRoute
+  '/changed-my-mind': typeof ChangedMyMindRoute
+  '/path-to-product': typeof PathToProductRoute
+  '/teardowns': typeof TeardownsRoute
   '/notes/$slug': typeof NotesSlugRoute
   '/notes': typeof NotesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/certifications': typeof CertificationsRoute
+  '/changed-my-mind': typeof ChangedMyMindRoute
+  '/path-to-product': typeof PathToProductRoute
+  '/teardowns': typeof TeardownsRoute
   '/notes/$slug': typeof NotesSlugRoute
   '/notes/': typeof NotesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/notes/$slug' | '/notes/'
+  fullPaths:
+    | '/'
+    | '/certifications'
+    | '/changed-my-mind'
+    | '/path-to-product'
+    | '/teardowns'
+    | '/notes/$slug'
+    | '/notes/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/notes/$slug' | '/notes'
-  id: '__root__' | '/' | '/notes/$slug' | '/notes/'
+  to:
+    | '/'
+    | '/certifications'
+    | '/changed-my-mind'
+    | '/path-to-product'
+    | '/teardowns'
+    | '/notes/$slug'
+    | '/notes'
+  id:
+    | '__root__'
+    | '/'
+    | '/certifications'
+    | '/changed-my-mind'
+    | '/path-to-product'
+    | '/teardowns'
+    | '/notes/$slug'
+    | '/notes/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CertificationsRoute: typeof CertificationsRoute
+  ChangedMyMindRoute: typeof ChangedMyMindRoute
+  PathToProductRoute: typeof PathToProductRoute
+  TeardownsRoute: typeof TeardownsRoute
   NotesSlugRoute: typeof NotesSlugRoute
   NotesIndexRoute: typeof NotesIndexRoute
 }
@@ -66,6 +128,34 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/certifications': {
+      id: '/certifications'
+      path: '/certifications'
+      fullPath: '/certifications'
+      preLoaderRoute: typeof CertificationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/changed-my-mind': {
+      id: '/changed-my-mind'
+      path: '/changed-my-mind'
+      fullPath: '/changed-my-mind'
+      preLoaderRoute: typeof ChangedMyMindRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/path-to-product': {
+      id: '/path-to-product'
+      path: '/path-to-product'
+      fullPath: '/path-to-product'
+      preLoaderRoute: typeof PathToProductRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/teardowns': {
+      id: '/teardowns'
+      path: '/teardowns'
+      fullPath: '/teardowns'
+      preLoaderRoute: typeof TeardownsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/notes/': {
@@ -87,6 +177,10 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CertificationsRoute: CertificationsRoute,
+  ChangedMyMindRoute: ChangedMyMindRoute,
+  PathToProductRoute: PathToProductRoute,
+  TeardownsRoute: TeardownsRoute,
   NotesSlugRoute: NotesSlugRoute,
   NotesIndexRoute: NotesIndexRoute,
 }
