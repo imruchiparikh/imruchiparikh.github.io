@@ -1,6 +1,6 @@
-import { useState } from "react";
 import { Check, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 
 const workflow = [
   {
@@ -54,48 +54,31 @@ const workflow = [
 ];
 
 export function ProductWorkflow() {
-  const [active, setActive] = useState(0);
-  const current = workflow[active];
-  if (!current) return null;
-
   return (
-    <div>
-      <div className="grid border-y border-border sm:grid-cols-3 lg:grid-cols-6">
-        {workflow.map((step, index) => (
-          <Button
-            key={step.label}
-            type="button"
-            variant="ghost"
-            onClick={() => setActive(index)}
-            aria-pressed={active === index}
-            className={`group h-auto min-h-24 justify-between rounded-none border-b border-border px-4 py-5 text-left sm:border-r lg:border-b-0 ${
-              active === index ? "bg-card text-foreground" : "text-muted-foreground"
-            }`}
-          >
-            <span>
-              <span className="label-mono block text-cyan">{step.number}</span>
-              <span className="mt-3 block text-sm font-medium">{step.label}</span>
-            </span>
-            <ChevronRight className={`size-4 ${active === index ? "text-cyan" : "opacity-35"}`} />
-          </Button>
+    <div className="relative">
+      <div className="absolute left-[8%] right-[8%] top-12 hidden h-px bg-border lg:block" aria-hidden="true" />
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
+        {workflow.map((step) => (
+          <Dialog key={step.label}>
+            <DialogTrigger asChild>
+              <Button type="button" variant="outline" className="group relative z-10 h-28 min-w-0 flex-col items-start justify-between whitespace-normal rounded-sm bg-card px-4 py-4 text-left hover:border-cyan hover:bg-accent">
+                <span className="flex w-full items-center justify-between"><span className="label-mono text-cyan">{step.number}</span><ChevronRight className="size-4 text-muted-foreground group-hover:text-cyan" /></span>
+                <span className="text-sm font-semibold text-foreground">{step.label}</span>
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="max-h-[85vh] overflow-y-auto border-cyan/40 bg-card sm:max-w-2xl">
+              <DialogHeader>
+                <p className="label-mono text-cyan">Step {step.number} · {step.label}</p>
+                <DialogTitle className="pt-2 font-display text-3xl leading-tight">{step.title}</DialogTitle>
+                <DialogDescription className="pt-3 text-base leading-7">{step.detail}</DialogDescription>
+              </DialogHeader>
+              <div className="mt-3 border-l-2 border-cyan pl-4">
+                <p className="label-mono text-muted-foreground">Output</p>
+                <p className="mt-2 flex gap-3 text-sm leading-6 text-foreground"><Check className="mt-1 size-4 shrink-0 text-cyan" />{step.output}</p>
+              </div>
+            </DialogContent>
+          </Dialog>
         ))}
-      </div>
-
-      <div className="grid gap-8 bg-card px-6 py-8 md:grid-cols-[1fr_0.62fr] md:px-10 md:py-10">
-        <div>
-          <p className="label-mono text-cyan">{current.label} · What I would do</p>
-          <h2 className="mt-3 max-w-2xl font-display text-2xl font-semibold text-foreground sm:text-3xl">
-            {current.title}
-          </h2>
-          <p className="mt-4 max-w-2xl text-base leading-7 text-muted-foreground">{current.detail}</p>
-        </div>
-        <div className="border-l border-border pl-6">
-          <p className="label-mono text-muted-foreground">Output</p>
-          <p className="mt-3 flex gap-3 text-sm leading-6 text-foreground">
-            <Check className="mt-1 size-4 shrink-0 text-cyan" aria-hidden="true" />
-            {current.output}
-          </p>
-        </div>
       </div>
     </div>
   );

@@ -9,7 +9,6 @@ const tabs = [
   { to: "/notes", label: "Blog" },
   { to: "/ai-skills", label: "AI & Product Skills" },
   { to: "/workflow", label: "PRD to Product" },
-  { to: "/teardowns", label: "Teardowns" },
   { to: "/path-to-product", label: "About" },
 ] as const;
 

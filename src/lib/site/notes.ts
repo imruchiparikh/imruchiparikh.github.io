@@ -18,12 +18,17 @@ export type Note = {
   subtitle: string;
   kind: "source" | "original" | "book" | "podcast" | "qa" | "program" | "link";
   kindLabel: string;
+  tag: NoteTag;
+  date: string;
+  readTime: string;
   draft?: boolean;
   featured?: boolean;
   linkTo?: string;
   source?: NoteSource;
   sections: NoteSection[];
 };
+
+export type NoteTag = "Product Management" | "AI/ML" | "QA" | "Book" | "Product Teardown";
 
 export const notes: Note[] = [
   {
@@ -34,6 +39,9 @@ export const notes: Note[] = [
       "What the Duolingo growth story changed about how I think about product ideas.",
     kind: "source",
     kindLabel: "Inspired by a newsletter essay",
+    tag: "Product Management",
+    date: "Jun 18, 2025",
+    readTime: "8 min read",
     featured: true,
     source: {
       label: "Jorge Mazal — “How Duolingo reignited user growth”",
@@ -105,6 +113,9 @@ export const notes: Note[] = [
       "The request is usually a solution someone already imagined. The problem is one level down.",
     kind: "original",
     kindLabel: "Original thinking",
+    tag: "Product Management",
+    date: "Jul 10, 2025",
+    readTime: "5 min read",
     sections: [
       {
         heading: "The trap",
@@ -144,6 +155,9 @@ export const notes: Note[] = [
       "A demo impresses in thirty seconds. A feature has to survive week three.",
     kind: "original",
     kindLabel: "Original thinking",
+    tag: "AI/ML",
+    date: "Aug 7, 2025",
+    readTime: "7 min read",
     sections: [
       {
         heading: "The bar I keep coming back to",
@@ -183,6 +197,9 @@ export const notes: Note[] = [
     subtitle: "Metrics aren't measurement so much as a bet on what matters.",
     kind: "original",
     kindLabel: "Original thinking",
+    tag: "Product Management",
+    date: "Sep 4, 2025",
+    readTime: "6 min read",
     sections: [
       {
         heading: "The metric is an instruction",
@@ -219,6 +236,9 @@ export const notes: Note[] = [
       "Six years in quality engineering turned out to be product training in disguise.",
     kind: "qa",
     kindLabel: "From my QA background",
+    tag: "QA",
+    date: "Oct 16, 2025",
+    readTime: "6 min read",
     sections: [
       {
         heading: "Assume the happy path is a lie",
@@ -255,6 +275,9 @@ export const notes: Note[] = [
     subtitle: "In a good way. Compliments are data about manners, not about demand.",
     kind: "book",
     kindLabel: "From a book",
+    tag: "Book",
+    date: "Nov 20, 2025",
+    readTime: "5 min read",
     source: {
       label: "The Mom Test",
       detail: "Rob Fitzpatrick",
@@ -295,6 +318,9 @@ export const notes: Note[] = [
     subtitle: "Structure beats prose. Front-load the point so readers can leave when they've got it.",
     kind: "book",
     kindLabel: "From a book",
+    tag: "Book",
+    date: "Jan 15, 2026",
+    readTime: "4 min read",
     source: {
       label: "Smart Brevity",
       detail: "Jim VandeHei, Mike Allen, Roy Schwartz",
@@ -336,6 +362,9 @@ export const notes: Note[] = [
       "The most repeated advice in product is also the most mangled in practice.",
     kind: "podcast",
     kindLabel: "Inspired by a podcast",
+    tag: "Product Management",
+    date: "Mar 12, 2026",
+    readTime: "5 min read",
     source: {
       label: "Recurring theme on Lenny's Podcast",
       detail: "and pretty much anywhere product people talk",
@@ -373,28 +402,81 @@ export const notes: Note[] = [
     number: "09",
     title: "What I Learned From My PM Program",
     subtitle:
-      "A four-month program inside my company. This note is a draft I'm still writing.",
+      "What four months of supported product exposure at Curinos made concrete for me.",
     kind: "program",
-    kindLabel: "Draft — from my own experience",
-    draft: true,
+    kindLabel: "From my own experience",
+    tag: "Product Management",
+    date: "Sep 4, 2025",
+    readTime: "8 min read",
     sections: [
       {
-        heading: "Where this note stands",
+        heading: "Learning through contribution",
         paragraphs: [
-          "I finished a four-month product management program inside my current company — real coursework, real case work, a proper certificate at the end. I'm still working out what actually changed versus what just gave me vocabulary for things I'd already noticed.",
+          "From May 6 through August 31, Curinos gave me four months of supported exposure to product work. It was not an internship and I was not acting as a Product Manager. I was learning by contributing alongside people already doing the work, with guidance and room to ask questions.",
+          "I joined client meetings and demonstrated app features directly to clients. I led two features with support and contributed to others, presented in product roadmap review meetings, and participated in problem and solution discovery. Each experience made product management feel less like a collection of frameworks and more like a discipline of connected decisions.",
         ],
       },
       {
-        heading: "What's forming so far",
+        heading: "The work behind the visible feature",
         paragraphs: [
-          "Draft observation: the vocabulary helps — not to sound the part, but because naming a trade-off out loud makes it harder to quietly ignore. “What are we choosing not to do?” is a much harder question to dodge once it has a name.",
+          "I conducted stakeholder interviews, made synthesis documents, created user flows and PRDs, and worked with UI/UX on prototype feedback. I also collaborated with engineering and data science through delivery. Desktop research on omnichannel experiences widened the questions I was asking beyond the feature in front of me.",
+          "The most useful lesson was how much translation the work requires: client language into a problem, research into a pattern, a pattern into a flow, and a flow into something design and engineering can challenge together.",
         ],
       },
       {
-        heading: "To be written",
-        placeholder: true,
+        heading: "What the training added",
         paragraphs: [
-          "[Draft — this section is intentionally left open. It will hold specifics from the program: which exercises changed how I approach problems, where the coursework disagreed with what I saw in practice, and what I'd tell my pre-program self. I'd rather leave it honest and unfinished than fill it with something generic.]",
+          "A two-day product training workshop strengthened the practical side of the experience. I learned methodologies I could apply to discovery, prioritization, and delivery rather than simply recognize by name.",
+          "I came away with a clearer understanding of product management as a discipline: not owning every answer, but creating enough shared clarity for a team to make better choices. I am still building that judgment, and these four months gave me real situations to reflect on instead of only hypothetical ones.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "spotify-product-teardown",
+    number: "10",
+    title: "Spotify: Discovery, Habit, and the Cost of Staying Familiar",
+    subtitle: "An outside-in teardown of what works, where I see friction, and what I would test.",
+    kind: "original",
+    kindLabel: "Product teardown",
+    tag: "Product Teardown",
+    date: "Sep 17, 2026",
+    readTime: "9 min read",
+    sections: [
+      {
+        heading: "What I can observe",
+        paragraphs: [
+          "Spotify gets a listener from opening the app to hearing music remarkably quickly. Search is direct, playlists remove decisions, and playback continues across devices without much ceremony. The free tier also teaches the habit before asking for an upgrade.",
+          "The friction appears later. Discovery can begin to feel like a loop that keeps serving the person you were last month, while playlists accumulate without a useful way to prune them.",
+        ],
+      },
+      {
+        heading: "My hypothesis",
+        paragraphs: [
+          "I suspect Spotify's durable advantage is less about catalog size and more about the accumulated model of a listener's taste plus the habit built around it. The switching cost feels psychological rather than technical.",
+          "I also suspect recommendations may favor a safe next track over an interesting one. That could support short-term listening while gradually making discovery feel less alive.",
+        ],
+      },
+      {
+        heading: "What I would test",
+        list: [
+          "Whether an intentionally adventurous discovery mode improves longer-term retention, even if short-term skip rates rise.",
+          "Whether lightweight archive and cleanup tools reduce playlist abandonment.",
+          "Whether different interruption patterns on the free tier improve conversion without damaging the listening habit.",
+        ],
+      },
+      {
+        heading: "What I would measure",
+        list: [
+          "Discovery diversity alongside 60–90 day retention.",
+          "Playlist creation alongside later playlist reuse.",
+          "Free-tier session completion and upgrade conversion by acquisition cohort.",
+        ],
+      },
+      {
+        heading: "What I don't know",
+        paragraphs: [
+          "I do not know Spotify's internal data, recommendation weights, or actual upgrade funnel. This is outside-in reasoning based on publicly observable product behavior—not insider knowledge. I would want to validate every hypothesis before treating it as a finding.",
         ],
       },
     ],
@@ -408,6 +490,9 @@ export const notesIndexEntry: Note = {
   subtitle: "An ongoing section — beliefs I've updated, honestly and slowly.",
   kind: "link",
   kindLabel: "Ongoing section",
+  tag: "Product Management",
+  date: "Sep 17, 2026",
+  readTime: "6 min read",
   linkTo: "/changed-my-mind",
   sections: [],
 };
@@ -418,6 +503,7 @@ export function getNote(slug: string): Note | undefined {
 }
 
 export function featuredNote(): Note {
-  // The first note is always the featured one; the array is non-empty by construction.
-  return notes[0]!;
+  const first = notes[0];
+  if (!first) throw new Error("At least one note is required");
+  return first;
 }
