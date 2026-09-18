@@ -45,8 +45,8 @@ function AiSkillsPage() {
         {skills.map((skill) => (
           <Dialog key={skill.number}>
             <DialogTrigger asChild>
-              <Button variant="outline" className="group h-36 w-full items-stretch justify-between rounded-sm bg-card p-6 text-left hover:border-cyan hover:bg-accent">
-                <span className="flex flex-col items-start justify-between">
+              <Button variant="outline" className="group h-36 w-full min-w-0 items-stretch justify-between whitespace-normal rounded-sm bg-card p-6 text-left hover:border-cyan hover:bg-accent">
+                <span className="flex min-w-0 flex-col items-start justify-between">
                   <span className="label-mono text-cyan">{skill.number} · {skill.title}</span>
                   <span className="font-display text-xl font-semibold leading-snug text-foreground">{skill.question}</span>
                 </span>

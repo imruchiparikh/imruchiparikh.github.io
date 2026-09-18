@@ -61,7 +61,7 @@ export function ProductWorkflow() {
         {workflow.map((step) => (
           <Dialog key={step.label}>
             <DialogTrigger asChild>
-              <Button type="button" variant="outline" className="group relative z-10 h-28 flex-col items-start justify-between rounded-sm bg-card px-4 py-4 text-left hover:border-cyan hover:bg-accent">
+              <Button type="button" variant="outline" className="group relative z-10 h-28 min-w-0 flex-col items-start justify-between whitespace-normal rounded-sm bg-card px-4 py-4 text-left hover:border-cyan hover:bg-accent">
                 <span className="flex w-full items-center justify-between"><span className="label-mono text-cyan">{step.number}</span><ChevronRight className="size-4 text-muted-foreground group-hover:text-cyan" /></span>
                 <span className="text-sm font-semibold text-foreground">{step.label}</span>
               </Button>
