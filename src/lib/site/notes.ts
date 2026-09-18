@@ -406,7 +406,7 @@ export const notes: Note[] = [
     kind: "program",
     kindLabel: "From my own experience",
     tag: "Product Management",
-    date: "Sep 4, 2026",
+    date: "Sep 4, 2025",
     readTime: "8 min read",
     sections: [
       {
@@ -503,6 +503,7 @@ export function getNote(slug: string): Note | undefined {
 }
 
 export function featuredNote(): Note {
-  // The first note is always the featured one; the array is non-empty by construction.
-  return notes[0]!;
+  const first = notes[0];
+  if (!first) throw new Error("At least one note is required");
+  return first;
 }

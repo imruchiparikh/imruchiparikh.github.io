@@ -11,9 +11,9 @@
 
 # Content and interaction refinement
 
-- [ ] Simplify the home page so it introduces Ruchi without repeating content from other pages.
-- [ ] Redesign Blog as a visual, filterable card grid with topic imagery, tags, author, dates, and reading times.
-- [ ] Add the Spotify teardown to Blog and remove Teardowns as a separate navigation destination.
-- [ ] Replace the PM-program draft with Ruchi's Curinos experience, clearly framed as supported product exposure rather than a PM role.
-- [ ] Turn AI & Product Skills and PRD to Product into clickable visual flows with modal detail windows.
+- [x] Simplify the home page so it introduces Ruchi without repeating content from other pages.
+- [x] Redesign Blog as a visual, filterable card grid with topic imagery, tags, author, dates, and reading times.
+- [x] Add the Spotify teardown to Blog and remove Teardowns as a separate navigation destination.
+- [x] Replace the PM-program draft with Ruchi's Curinos experience, clearly framed as supported product exposure rather than a PM role.
+- [x] Turn AI & Product Skills and PRD to Product into clickable visual flows with modal detail windows.
 - [ ] Verify filtering, dialogs, content pages, mobile layouts, navigation, metadata, and build health.

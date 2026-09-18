@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Check, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
@@ -59,7 +58,7 @@ export function ProductWorkflow() {
     <div className="relative">
       <div className="absolute left-[8%] right-[8%] top-12 hidden h-px bg-border lg:block" aria-hidden="true" />
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
-        {workflow.map((step, index) => (
+        {workflow.map((step) => (
           <Dialog key={step.label}>
             <DialogTrigger asChild>
               <Button type="button" variant="outline" className="group relative z-10 h-28 flex-col items-start justify-between rounded-sm bg-card px-4 py-4 text-left hover:border-cyan hover:bg-accent">
