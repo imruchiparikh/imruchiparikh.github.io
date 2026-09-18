@@ -1,8 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useRouterState } from "@tanstack/react-router";
 
-// Replace with the real LinkedIn profile URL when available.
-const LINKEDIN_URL = "https://www.linkedin.com";
+const LINKEDIN_URL = "https://www.linkedin.com/in/ruchi-parikh/";
 
 const tabs = [
   { to: "/", label: "Home" },
