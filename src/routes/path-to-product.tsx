@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { PageIntro } from "@/components/site/editorial";
 
 export const Route = createFileRoute("/path-to-product")({
@@ -8,12 +8,12 @@ export const Route = createFileRoute("/path-to-product")({
       {
         name: "description",
         content:
-          "From six years in software quality engineering to deliberate product thinking — the honest path, in progress.",
+          "How more than eight years in software quality engineering developed alongside a lasting interest in product thinking.",
       },
       { property: "og:title", content: "My Path to Product — Ruchi Parikh" },
       {
         property: "og:description",
-        content: "From quality engineering to deliberate product thinking — the honest path, in progress.",
+        content: "How quality engineering and product thinking have developed alongside each other over more than eight years.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -26,7 +26,7 @@ const steps = [
   {
     label: "Quality Engineering",
     title: "Where it started",
-    body: "Six-plus years in software quality engineering. The job trained me to assume the happy path is a lie — and to care, intensely, about what actually happens to the person on the other side of the screen. Somewhere in there, “the software is correct” stopped being the interesting question and “the product is right” became the interesting one.",
+    body: "More than eight years in software quality engineering taught me to look beyond whether a feature technically works. Even while testing, I was drawn to the product questions around it: who needs this, what problem does it solve, and what makes the experience worth returning to? Quality and product thinking have grown alongside each other for me rather than one replacing the other.",
   },
   {
     label: "Automation & Technical Depth",
@@ -39,24 +39,24 @@ const steps = [
     body: "The more I automated and validated, the more my questions drifted from “does it work?” to “why does this exist, and does it earn its place?” Watching decisions land — and watching which arguments actually moved them — pulled me toward product thinking the long way round: through the work, not around it.",
   },
   {
-    label: "AIPMM CDPM",
-    title: "Certified Digital Product Manager",
-    body: "The AIPMM program gave structure to the instincts — vocabulary for trade-offs, frameworks for discovery and delivery. Useful not as a credential to lean on, but because naming a trade-off makes it harder to quietly ignore.",
-  },
-  {
     label: "CSPO",
     title: "Certified Scrum Product Owner",
     body: "The Scrum side of the same curiosity: how product decisions survive contact with delivery reality. Backlogs, priorities, and the discipline of choosing what not to do.",
   },
   {
+    label: "AIPMM CDPM",
+    title: "Certified Digital Product Manager",
+    body: "The AIPMM program gave structure to the instincts — vocabulary for trade-offs, frameworks for discovery and delivery. Useful not as a credential to lean on, but because naming a trade-off makes it harder to quietly ignore.",
+  },
+  {
     label: "May 6 – August 31 · Curinos",
     title: "Four months of supported product exposure",
-    body: "Curinos gave me space to learn by contributing alongside product teams—not an internship and not a Product Manager role. I joined client meetings, demonstrated app features directly to clients, led two features with support and contributed to others, presented in product roadmap reviews, and took part in problem and solution discovery. I also interviewed stakeholders, created synthesis documents, mapped user flows, wrote PRDs, and collaborated with design, engineering, and data science through delivery.",
+    body: "Curinos gave me space to learn by contributing alongside product teams. I joined client meetings, demonstrated app features directly to clients, led two features with support and contributed to others, presented in product roadmap reviews, and took part in problem and solution discovery. I also interviewed stakeholders, created synthesis documents, mapped user flows, wrote PRDs, and collaborated with design, engineering, and data science through delivery.",
   },
   {
     label: "Now",
-    title: "Continuing to build product thinking",
-    body: "The experience at Curinos—plus a two-day product training workshop on practical methodologies—made the discipline much more concrete. I haven't held a Product Manager title, and this site doesn't pretend otherwise. I am continuing to build on a technical foundation, supported product exposure, and the habit of making my thinking visible enough to question.",
+    title: "Continuing to build product thinking in my QA role",
+    body: "After completing that experience, I continue to work in QA at Curinos. I still bring a quality lens to the work, while staying curious about the product decisions around it. The program and a two-day product training workshop made that interest more practical: I now notice more clearly where discovery, evidence, delivery, and quality meet. I am continuing to develop both perspectives without claiming to have mastered either one.",
   },
 ];
 
@@ -66,9 +66,9 @@ function PathPage() {
       <div className="pt-16">
         <PageIntro label="About · My Path to Product" title="My Path to Product">
           <p>
-            Not a career pivot story with the ending pre-written — a path still being walked.
-            Technical work slowly turned me into someone who asks product questions, and the
-            programs gave those questions structure.
+            This is not a story of leaving one discipline behind for another. Product questions
+            have been part of how I think even while working in QA, and practical product exposure
+            gave those questions more structure.
           </p>
         </PageIntro>
       </div>
@@ -103,21 +103,6 @@ function PathPage() {
           </li>
         ))}
       </ol>
-
-      <div className="mt-6 rounded-md border border-border bg-card p-6">
-        <p className="max-w-xl text-sm leading-relaxed text-muted-foreground">
-          The short version: I'm a quality engineer with six years
-          of systems thinking, two product certifications, four months of supported product exposure at Curinos, and a habit of
-          writing down what I think —{" "}
-          <Link
-            to="/notes"
-            className="underline decoration-border underline-offset-4 hover:decoration-foreground"
-          >
-            which you can judge for yourself
-          </Link>
-          .
-        </p>
-      </div>
     </div>
   );
 }
