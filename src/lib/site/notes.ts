@@ -400,7 +400,7 @@ export const notes: Note[] = [
   {
     slug: "pm-program-reflections",
     number: "09",
-    title: "What I Learned From My PM Program",
+    title: "What Four Months Close to Product Work Taught Me",
     subtitle:
       "What four months of supported product exposure at Curinos made concrete for me.",
     kind: "program",
@@ -412,7 +412,7 @@ export const notes: Note[] = [
       {
         heading: "Learning through contribution",
         paragraphs: [
-          "From May 6 through August 31, Curinos gave me four months of supported exposure to product work. It was not an internship and I was not acting as a Product Manager. I was learning by contributing alongside people already doing the work, with guidance and room to ask questions.",
+          "From May 6 through August 31, Curinos gave me four months of supported exposure to product work. I learned by contributing alongside people already doing the work, with guidance and room to ask questions.",
           "I joined client meetings and demonstrated app features directly to clients. I led two features with support and contributed to others, presented in product roadmap review meetings, and participated in problem and solution discovery. Each experience made product management feel less like a collection of frameworks and more like a discipline of connected decisions.",
         ],
       },
@@ -424,10 +424,19 @@ export const notes: Note[] = [
         ],
       },
       {
+        heading: "What I want to keep practicing",
+        paragraphs: [
+          "In client meetings and feature demos, I learned that presenting information is only half the job. I want to be more interactive, read the room, invite the audience into the conversation, and draw out the questions behind their first reactions.",
+          "Stakeholder interviews taught me not to march through every prepared question. A useful follow-up can reveal more than the rest of the script. The harder discipline is resisting the urge to jump to a solution while the problem is still unfolding; people do not always know how to name what they need, so asking questions that uncover it is a craft.",
+          "Desktop research added another lesson: a product needs a meaningful difference to break through market noise. But differentiation alone is not enough. Improving the quality of the experience is often the first step toward making that difference believable.",
+          "The phrase I keep returning to is: never assume; trust, but verify. It applies to research findings, client requests, data, requirements, and my own first interpretation of a problem.",
+        ],
+      },
+      {
         heading: "What the training added",
         paragraphs: [
           "A two-day product training workshop strengthened the practical side of the experience. I learned methodologies I could apply to discovery, prioritization, and delivery rather than simply recognize by name.",
-          "I came away with a clearer understanding of product management as a discipline: not owning every answer, but creating enough shared clarity for a team to make better choices. I am still building that judgment, and these four months gave me real situations to reflect on instead of only hypothetical ones.",
+          "I came away with a clearer understanding of product management as a discipline of connected decisions and shared clarity. I am still building that judgment, and these four months gave me real situations to reflect on instead of only hypothetical ones.",
         ],
       },
     ],

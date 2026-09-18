@@ -17,3 +17,11 @@
 - [x] Replace the PM-program draft with Ruchi's Curinos experience, clearly framed as supported product exposure rather than a PM role.
 - [x] Turn AI & Product Skills and PRD to Product into clickable visual flows with modal detail windows.
 - [x] Verify filtering, dialogs, content pages, mobile layouts, navigation, metadata, and build health.
+
+# Experience narrative refinement
+
+- [ ] Update About to reflect 8+ years in QA, CSPO before CDPM, and the current Curinos QA role.
+- [ ] Remove the short-version block and keep QA and product thinking balanced.
+- [ ] Reframe PRD to Product as a connected, clickable flow learned through practice.
+- [ ] Add practical Curinos takeaways on client engagement, interviews, problem discovery, differentiation, quality, and verification.
+- [ ] Verify the revised About, workflow, and program reflection on desktop and mobile.

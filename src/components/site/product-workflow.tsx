@@ -1,4 +1,4 @@
-import { Check, ChevronRight } from "lucide-react";
+import { ArrowDown, ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 
@@ -8,7 +8,7 @@ const workflow = [
     label: "Problem",
     title: "Name the problem before the feature",
     detail:
-      "I would start with the behavior, friction, and context—not a requested solution. What is happening now? Who feels it? What evidence would change my mind?",
+      "I learned how tempting it is to think about a solution while the problem is still being discovered. In practice, I want to stay with the behavior, friction, and context long enough to understand what is actually happening and who feels it.",
     output: "A problem statement and the assumptions underneath it.",
   },
   {
@@ -16,7 +16,7 @@ const workflow = [
     label: "Evidence",
     title: "Separate signal from a good story",
     detail:
-      "I would combine user conversations, observable behavior, and data checks. My quality background makes me verify the signal before explaining it; a tracking issue can look exactly like a product issue.",
+      "The habit I want to practice is simple: never assume, and trust but verify. That means combining conversations, observable behavior, desktop research, and data checks before treating a convincing explanation as evidence.",
     output: "Evidence, unknowns, and a clear confidence level.",
   },
   {
@@ -24,7 +24,7 @@ const workflow = [
     label: "PRD",
     title: "Write for decisions, not ceremony",
     detail:
-      "The document should make the problem, user, constraints, success measure, edge cases, and open questions easy to challenge. For AI features, I would also define acceptable failure and when the product should say “I don’t know.”",
+      "A useful PRD should make the problem, user, constraints, success measure, edge cases, and open questions easy for design, engineering, and data partners to challenge. I learned that the document matters most when it improves the conversation around the decision.",
     output: "A concise working PRD that exposes trade-offs.",
   },
   {
@@ -32,7 +32,7 @@ const workflow = [
     label: "MVP",
     title: "Choose the smallest useful learning loop",
     detail:
-      "I would cut anything that does not test the riskiest assumption. The goal is not simply fewer features; it is enough product to produce a trustworthy answer.",
+      "The goal is not simply to build less. I want to identify the riskiest assumption, shape enough of the product to test it, and keep quality high enough that a weak experience does not distort what the team learns.",
     output: "A scoped first version and an explicit learning goal.",
   },
   {
@@ -40,7 +40,7 @@ const workflow = [
     label: "Measure",
     title: "Decide what better means in advance",
     detail:
-      "I would pair one primary behavior with guardrails so a metric cannot improve while the experience quietly gets worse. Instrumentation and data quality belong in this conversation early.",
+      "I learned to discuss the intended behavior and its guardrails before delivery. Instrumentation and data quality belong early in the flow, because a result is only useful when the team can trust what produced it.",
     output: "Success signals, guardrails, and a validation plan.",
   },
   {
@@ -48,22 +48,30 @@ const workflow = [
     label: "Learn",
     title: "Compare the result with the original belief",
     detail:
-      "After release, I would ask what changed, what did not, and which assumption failed. The next decision could be to expand, revise, or stop. All three are useful outcomes when the learning is clear.",
+      "The final practice is to return to the original belief: what changed, what did not, and which assumption was wrong? Expanding, revising, or stopping can all be responsible outcomes when the learning is clear.",
     output: "A decision, plus the evidence that supports it.",
   },
 ];
 
 export function ProductWorkflow() {
   return (
-    <div className="relative">
-      <div className="absolute left-[8%] right-[8%] top-12 hidden h-px bg-border lg:block" aria-hidden="true" />
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
-        {workflow.map((step) => (
-          <Dialog key={step.label}>
+    <div className="mx-auto max-w-4xl">
+      <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-x-3 gap-y-5 sm:gap-x-6">
+        {workflow.map((step, index) => (
+          <div
+            key={step.label}
+            className={index % 2 === 0 ? "contents" : "contents"}
+          >
+            <Dialog>
             <DialogTrigger asChild>
-              <Button type="button" variant="outline" className="group relative z-10 h-28 min-w-0 flex-col items-start justify-between whitespace-normal rounded-sm bg-card px-4 py-4 text-left hover:border-cyan hover:bg-accent">
-                <span className="flex w-full items-center justify-between"><span className="label-mono text-cyan">{step.number}</span><ChevronRight className="size-4 text-muted-foreground group-hover:text-cyan" /></span>
-                <span className="text-sm font-semibold text-foreground">{step.label}</span>
+              <Button
+                type="button"
+                variant="outline"
+                className={`group min-h-28 min-w-0 flex-col items-start justify-between whitespace-normal rounded-sm border-border bg-card px-5 py-4 text-left hover:border-cyan hover:bg-accent ${index % 2 === 0 ? "col-start-1" : "col-start-3"}`}
+              >
+                <span className="label-mono text-cyan">{step.number}</span>
+                <span className="text-base font-semibold text-foreground">{step.label}</span>
+                <span className="text-xs font-normal text-muted-foreground">Open detail</span>
               </Button>
             </DialogTrigger>
             <DialogContent className="max-h-[85vh] overflow-y-auto border-cyan/40 bg-card sm:max-w-2xl">
@@ -77,7 +85,20 @@ export function ProductWorkflow() {
                 <p className="mt-2 flex gap-3 text-sm leading-6 text-foreground"><Check className="mt-1 size-4 shrink-0 text-cyan" />{step.output}</p>
               </div>
             </DialogContent>
-          </Dialog>
+            </Dialog>
+            <div className="col-start-2 row-auto flex items-center justify-center text-cyan" aria-hidden="true">
+              <ArrowRight className={`hidden size-5 sm:block ${index % 2 === 0 ? "" : "rotate-180"}`} />
+              <ArrowDown className="size-5 sm:hidden" />
+            </div>
+            {index < workflow.length - 1 ? (
+              <div
+                className={`hidden h-10 w-px bg-border sm:block ${index % 2 === 0 ? "col-start-3" : "col-start-1"}`}
+                aria-hidden="true"
+              />
+            ) : (
+              <div className="hidden sm:block" aria-hidden="true" />
+            )}
+          </div>
         ))}
       </div>
     </div>
