@@ -14,7 +14,6 @@ import { Route as AiSkillsRouteImport } from './routes/ai-skills'
 import { Route as CertificationsRouteImport } from './routes/certifications'
 import { Route as ChangedMyMindRouteImport } from './routes/changed-my-mind'
 import { Route as PathToProductRouteImport } from './routes/path-to-product'
-import { Route as TeardownsRouteImport } from './routes/teardowns'
 import { Route as WorkflowRouteImport } from './routes/workflow'
 import { Route as NotesIndexRouteImport } from './routes/notes.index'
 import { Route as NotesSlugRouteImport } from './routes/notes.$slug'
@@ -44,11 +43,6 @@ const PathToProductRoute = PathToProductRouteImport.update({
   path: '/path-to-product',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TeardownsRoute = TeardownsRouteImport.update({
-  id: '/teardowns',
-  path: '/teardowns',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const WorkflowRoute = WorkflowRouteImport.update({
   id: '/workflow',
   path: '/workflow',
@@ -71,7 +65,6 @@ export interface FileRoutesByFullPath {
   '/certifications': typeof CertificationsRoute
   '/changed-my-mind': typeof ChangedMyMindRoute
   '/path-to-product': typeof PathToProductRoute
-  '/teardowns': typeof TeardownsRoute
   '/workflow': typeof WorkflowRoute
   '/notes/$slug': typeof NotesSlugRoute
   '/notes/': typeof NotesIndexRoute
@@ -82,7 +75,6 @@ export interface FileRoutesByTo {
   '/certifications': typeof CertificationsRoute
   '/changed-my-mind': typeof ChangedMyMindRoute
   '/path-to-product': typeof PathToProductRoute
-  '/teardowns': typeof TeardownsRoute
   '/workflow': typeof WorkflowRoute
   '/notes/$slug': typeof NotesSlugRoute
   '/notes': typeof NotesIndexRoute
@@ -94,7 +86,6 @@ export interface FileRoutesById {
   '/certifications': typeof CertificationsRoute
   '/changed-my-mind': typeof ChangedMyMindRoute
   '/path-to-product': typeof PathToProductRoute
-  '/teardowns': typeof TeardownsRoute
   '/workflow': typeof WorkflowRoute
   '/notes/$slug': typeof NotesSlugRoute
   '/notes/': typeof NotesIndexRoute
@@ -107,7 +98,6 @@ export interface FileRouteTypes {
     | '/certifications'
     | '/changed-my-mind'
     | '/path-to-product'
-    | '/teardowns'
     | '/workflow'
     | '/notes/$slug'
     | '/notes/'
@@ -118,7 +108,6 @@ export interface FileRouteTypes {
     | '/certifications'
     | '/changed-my-mind'
     | '/path-to-product'
-    | '/teardowns'
     | '/workflow'
     | '/notes/$slug'
     | '/notes'
@@ -129,7 +118,6 @@ export interface FileRouteTypes {
     | '/certifications'
     | '/changed-my-mind'
     | '/path-to-product'
-    | '/teardowns'
     | '/workflow'
     | '/notes/$slug'
     | '/notes/'
@@ -141,7 +129,6 @@ export interface RootRouteChildren {
   CertificationsRoute: typeof CertificationsRoute
   ChangedMyMindRoute: typeof ChangedMyMindRoute
   PathToProductRoute: typeof PathToProductRoute
-  TeardownsRoute: typeof TeardownsRoute
   WorkflowRoute: typeof WorkflowRoute
   NotesSlugRoute: typeof NotesSlugRoute
   NotesIndexRoute: typeof NotesIndexRoute
@@ -184,13 +171,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PathToProductRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/teardowns': {
-      id: '/teardowns'
-      path: '/teardowns'
-      fullPath: '/teardowns'
-      preLoaderRoute: typeof TeardownsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/workflow': {
       id: '/workflow'
       path: '/workflow'
@@ -221,7 +201,6 @@ const rootRouteChildren: RootRouteChildren = {
   CertificationsRoute: CertificationsRoute,
   ChangedMyMindRoute: ChangedMyMindRoute,
   PathToProductRoute: PathToProductRoute,
-  TeardownsRoute: TeardownsRoute,
   WorkflowRoute: WorkflowRoute,
   NotesSlugRoute: NotesSlugRoute,
   NotesIndexRoute: NotesIndexRoute,
