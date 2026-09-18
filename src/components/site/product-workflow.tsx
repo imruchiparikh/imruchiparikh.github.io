@@ -1,4 +1,4 @@
-import { ArrowDown, ArrowRight, Check } from "lucide-react";
+import { ArrowDown, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 
@@ -55,49 +55,42 @@ const workflow = [
 
 export function ProductWorkflow() {
   return (
-    <div className="mx-auto max-w-4xl">
-      <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-x-3 gap-y-5 sm:gap-x-6">
+    <div className="mx-auto max-w-3xl">
+      <div className="flex flex-col">
         {workflow.map((step, index) => (
-          <div
-            key={step.label}
-            className={index % 2 === 0 ? "contents" : "contents"}
-          >
-            <Dialog>
-            <DialogTrigger asChild>
-              <Button
-                type="button"
-                variant="outline"
-                className={`group min-h-28 min-w-0 flex-col items-start justify-between whitespace-normal rounded-sm border-border bg-card px-5 py-4 text-left hover:border-cyan hover:bg-accent ${index % 2 === 0 ? "col-start-1" : "col-start-3"}`}
-              >
-                <span className="label-mono text-cyan">{step.number}</span>
-                <span className="text-base font-semibold text-foreground">{step.label}</span>
-                <span className="text-xs font-normal text-muted-foreground">Open detail</span>
-              </Button>
-            </DialogTrigger>
-            <DialogContent className="max-h-[85vh] overflow-y-auto border-cyan/40 bg-card sm:max-w-2xl">
-              <DialogHeader>
-                <p className="label-mono text-cyan">Step {step.number} · {step.label}</p>
-                <DialogTitle className="pt-2 font-display text-3xl leading-tight">{step.title}</DialogTitle>
-                <DialogDescription className="pt-3 text-base leading-7">{step.detail}</DialogDescription>
-              </DialogHeader>
-              <div className="mt-3 border-l-2 border-cyan pl-4">
-                <p className="label-mono text-muted-foreground">Output</p>
-                <p className="mt-2 flex gap-3 text-sm leading-6 text-foreground"><Check className="mt-1 size-4 shrink-0 text-cyan" />{step.output}</p>
-              </div>
-            </DialogContent>
-            </Dialog>
-            <div className="col-start-2 row-auto flex items-center justify-center text-cyan" aria-hidden="true">
-              <ArrowRight className={`hidden size-5 sm:block ${index % 2 === 0 ? "" : "rotate-180"}`} />
-              <ArrowDown className="size-5 sm:hidden" />
+          <div key={step.label} className="contents">
+            <div className={`w-full sm:w-[46%] ${index % 2 === 0 ? "sm:self-start" : "sm:self-end"}`}>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button
+                    type="button"
+                    variant="outline"
+                    className="group min-h-28 w-full min-w-0 flex-col items-start justify-between whitespace-normal rounded-sm border-border bg-card px-5 py-4 text-left hover:border-cyan hover:bg-accent"
+                  >
+                    <span className="label-mono text-cyan">{step.number}</span>
+                    <span className="text-base font-semibold text-foreground">{step.label}</span>
+                    <span className="text-xs font-normal text-muted-foreground">Open detail</span>
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="max-h-[85vh] overflow-y-auto border-cyan/40 bg-card sm:max-w-2xl">
+                  <DialogHeader>
+                    <p className="label-mono text-cyan">Step {step.number} · {step.label}</p>
+                    <DialogTitle className="pt-2 font-display text-3xl leading-tight">{step.title}</DialogTitle>
+                    <DialogDescription className="pt-3 text-base leading-7">{step.detail}</DialogDescription>
+                  </DialogHeader>
+                  <div className="mt-3 border-l-2 border-cyan pl-4">
+                    <p className="label-mono text-muted-foreground">Output</p>
+                    <p className="mt-2 flex gap-3 text-sm leading-6 text-foreground"><Check className="mt-1 size-4 shrink-0 text-cyan" />{step.output}</p>
+                  </div>
+                </DialogContent>
+              </Dialog>
             </div>
             {index < workflow.length - 1 ? (
-              <div
-                className={`hidden h-10 w-px bg-border sm:block ${index % 2 === 0 ? "col-start-3" : "col-start-1"}`}
-                aria-hidden="true"
-              />
-            ) : (
-              <div className="hidden sm:block" aria-hidden="true" />
-            )}
+              <div className="flex h-14 items-center justify-center text-cyan" aria-hidden="true">
+                <span className="h-full w-px bg-border" />
+                <ArrowDown className="absolute size-5 bg-background" />
+              </div>
+            ) : null}
           </div>
         ))}
       </div>

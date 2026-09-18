@@ -20,8 +20,8 @@
 
 # Experience narrative refinement
 
-- [ ] Update About to reflect 8+ years in QA, CSPO before CDPM, and the current Curinos QA role.
-- [ ] Remove the short-version block and keep QA and product thinking balanced.
-- [ ] Reframe PRD to Product as a connected, clickable flow learned through practice.
-- [ ] Add practical Curinos takeaways on client engagement, interviews, problem discovery, differentiation, quality, and verification.
-- [ ] Verify the revised About, workflow, and program reflection on desktop and mobile.
+- [x] Update About to reflect 8+ years in QA, CSPO before CDPM, and the current Curinos QA role.
+- [x] Remove the short-version block and keep QA and product thinking balanced.
+- [x] Reframe PRD to Product as a connected, clickable flow learned through practice.
+- [x] Add practical Curinos takeaways on client engagement, interviews, problem discovery, differentiation, quality, and verification.
+- [x] Verify the revised About, workflow, and program reflection on desktop and mobile.

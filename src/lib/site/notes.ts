@@ -233,7 +233,7 @@ export const notes: Note[] = [
     number: "05",
     title: "What Testing Software Taught Me About Testing Ideas",
     subtitle:
-      "Six years in quality engineering turned out to be product training in disguise.",
+      "More than eight years in quality engineering gave me habits I now bring to product questions.",
     kind: "qa",
     kindLabel: "From my QA background",
     tag: "QA",
