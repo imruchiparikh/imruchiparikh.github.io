@@ -198,7 +198,7 @@ export const notes: Note[] = [
     kind: "original",
     kindLabel: "Original thinking",
     tag: "Product Management",
-    date: "Sep 4, 2025",
+    date: "Sep 4, 2026",
     readTime: "6 min read",
     sections: [
       {
@@ -319,7 +319,7 @@ export const notes: Note[] = [
     kind: "book",
     kindLabel: "From a book",
     tag: "Book",
-    date: "Jan 15, 2026",
+    date: "Aug 15, 2026",
     readTime: "4 min read",
     source: {
       label: "Smart Brevity",
@@ -449,7 +449,7 @@ export const notes: Note[] = [
     kind: "original",
     kindLabel: "Product teardown",
     tag: "Product Teardown",
-    date: "Sep 17, 2026",
+    date: "Feb 17, 2026",
     readTime: "9 min read",
     sections: [
       {
