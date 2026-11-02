@@ -49,14 +49,9 @@ const steps = [
     body: "The AIPMM program gave structure to the instincts — vocabulary for trade-offs, frameworks for discovery and delivery. Useful not as a credential to lean on, but because naming a trade-off makes it harder to quietly ignore.",
   },
   {
-    label: "May 6 – August 31 · Curinos",
-    title: "Four months of supported product exposure",
-    body: "Curinos gave me space to learn by contributing alongside product teams. I joined client meetings, demonstrated app features directly to clients, led two features with support and contributed to others, presented in product roadmap reviews, and took part in problem and solution discovery. I also interviewed stakeholders, created synthesis documents, mapped user flows, wrote PRDs, and collaborated with design, engineering, and data science through delivery.",
-  },
-  {
-    label: "Now",
-    title: "Continuing to build product thinking in my QA role",
-    body: "After completing that experience, I continue to work in QA at Curinos. I still bring a quality lens to the work, while staying curious about the product decisions around it. The program and a two-day product training workshop made that interest more practical: I now notice more clearly where discovery, evidence, delivery, and quality meet. I am continuing to develop both perspectives without claiming to have mastered either one.",
+    label: "Product Management",
+    title: "From understanding systems to shaping products",
+    body: "The shift into Product Management brought a different perspective to the same problems I had spent years working around. The focus expanded from validating what gets built to understanding what should be built, why it matters, and how it creates value for clients.\nThe work spans product discovery, problem definition, roadmap discussions, and feature delivery. It involves translating client challenges into product opportunities, exploring solutions across customer acquisition and engagement, and bringing structure to ambiguous problems through stakeholder research, user journeys, and PRDs.\nWorking closely with clients, Product, Engineering, Data Science, and UX has meant connecting different perspectives throughout the product lifecycle — from early discovery and solution exploration to design decisions, prioritization, and delivery. It has also brought a closer view of how data, technology, and customer behavior come together to shape meaningful product experiences.",
   },
 ];
 
