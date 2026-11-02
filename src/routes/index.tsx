@@ -20,12 +20,12 @@ function Index() {
   return (
     <div className="mx-auto max-w-6xl px-5 sm:px-8">
       <section className="flex min-h-[calc(100vh-5rem)] flex-col justify-center py-20 text-center sm:py-28">
-        <p className="label-mono text-cyan">Quality engineer · Product thinker · AI curious</p>
+        <p className="label-mono text-cyan">Product Management · Customer Experience · Technical Excellence</p>
         <h1 className="mt-7 font-display text-6xl font-bold leading-none text-foreground sm:text-8xl lg:text-9xl">
           Hi, I&apos;m <span className="text-cyan">Ruchi.</span>
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg">
-          I break software for a living and overthink products for fun.
+          I build confidence in products and can't stop thinking about how to make them better.
         </p>
         <div className="mt-9 flex flex-wrap justify-center gap-3">
           <Button asChild size="lg"><Link to="/notes">Read the blog <ArrowRight /></Link></Button>

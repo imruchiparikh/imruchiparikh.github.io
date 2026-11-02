@@ -400,9 +400,9 @@ export const notes: Note[] = [
   {
     slug: "pm-program-reflections",
     number: "09",
-    title: "What Four Months Close to Product Work Taught Me",
+    title: "Turning Client Problems into Product Decisions",
     subtitle:
-      "What four months of supported product exposure at Curinos made concrete for me.",
+      "A look at the thinking behind product discovery, strategic prioritization, and cross-functional execution.",
     kind: "program",
     kindLabel: "From my own experience",
     tag: "Product Management",
@@ -410,34 +410,35 @@ export const notes: Note[] = [
     readTime: "8 min read",
     sections: [
       {
-        heading: "Learning through contribution",
+        heading: "Connecting business needs with product direction",
         paragraphs: [
-          "From May 6 through August 31, Curinos gave me four months of supported exposure to product work. I learned by contributing alongside people already doing the work, with guidance and room to ask questions.",
-          "I joined client meetings and demonstrated app features directly to clients. I led two features with support and contributed to others, presented in product roadmap review meetings, and participated in problem and solution discovery. Each experience made product management feel less like a collection of frameworks and more like a discipline of connected decisions.",
+          "Product management sits at the intersection of customer needs, business priorities, and technical possibilities. At Curinos, much of the work involved bringing these perspectives together to identify meaningful product opportunities and translate them into actionable product improvements.",
+          "The focus extended beyond individual feature requests to understanding the underlying business problems, evaluating opportunities, and considering how proposed solutions fit into the broader product direction. This involved working through client conversations, product discovery, roadmap discussions, and feature delivery, while keeping customer experience and business value central to the decisions.",
         ],
       },
       {
-        heading: "The work behind the visible feature",
+        heading: "From discovery to execution",
         paragraphs: [
-          "I conducted stakeholder interviews, made synthesis documents, created user flows and PRDs, and worked with UI/UX on prototype feedback. I also collaborated with engineering and data science through delivery. Desktop research on omnichannel experiences widened the questions I was asking beyond the feature in front of me.",
-          "The most useful lesson was how much translation the work requires: client language into a problem, research into a pattern, a pattern into a flow, and a flow into something design and engineering can challenge together.",
+          "Translating a problem into a viable product solution requires structure, evidence, and alignment across teams. Stakeholder interviews and client discussions helped surface underlying needs, while research synthesis and user journey mapping brought clarity to problem areas and potential opportunities.",
+          "I developed PRDs, defined user flows, and worked closely with UX on prototype feedback to connect product requirements with the intended experience. In parallel, collaboration with Engineering and Data Science helped evaluate technical considerations and move solutions toward implementation. This also included leading two features with team support, contributing to additional initiatives, conducting client demonstrations, and participating in roadmap reviews.",
+          "Research into omnichannel experiences provided a broader view of how customer interactions evolve across digital and traditional banking channels. Rather than viewing each touchpoint independently, the work focused on identifying gaps in the overall experience and opportunities for more connected customer journeys.",
         ],
       },
       {
-        heading: "What I want to keep practicing",
+        heading: "Balancing customer value, feasibility, and differentiation",
         paragraphs: [
-          "In client meetings and feature demos, I learned that presenting information is only half the job. I want to be more interactive, read the room, invite the audience into the conversation, and draw out the questions behind their first reactions.",
-          "Stakeholder interviews taught me not to march through every prepared question. A useful follow-up can reveal more than the rest of the script. The harder discipline is resisting the urge to jump to a solution while the problem is still unfolding; people do not always know how to name what they need, so asking questions that uncover it is a craft.",
-          "Desktop research added another lesson: a product needs a meaningful difference to break through market noise. But differentiation alone is not enough. Improving the quality of the experience is often the first step toward making that difference believable.",
-          "The phrase I keep returning to is: never assume; trust, but verify. It applies to research findings, client requests, data, requirements, and my own first interpretation of a problem.",
+          "Product decisions rarely exist in isolation. A solution may address a client request but still need to be evaluated against broader customer needs, business objectives, technical feasibility, and long-term product direction.",
+          "Client feedback is an important input, but understanding the problem behind the request is what makes it actionable. Stakeholder conversations, research findings, and usage patterns each offer a different perspective; bringing them together helps distinguish recurring needs from isolated requests and assumptions from evidence.",
+          "Competitive and market research also plays a role in identifying where a product can create meaningful differentiation. However, differentiation only matters when it translates into a better experience or a measurable improvement for customers.",
         ],
       },
       {
-        heading: "What the training added",
+        heading: "Making decisions with clarity",
         paragraphs: [
-          "A two-day product training workshop strengthened the practical side of the experience. I learned methodologies I could apply to discovery, prioritization, and delivery rather than simply recognize by name.",
-          "I came away with a clearer understanding of product management as a discipline of connected decisions and shared clarity. I am still building that judgment, and these four months gave me real situations to reflect on instead of only hypothetical ones.",
-        ],
+          "A recurring principle across product discovery and delivery is simple: never assume; trust, but verify.",
+          "Whether evaluating a client request, validating a research finding, defining requirements, or reviewing a proposed solution, decisions benefit from evidence and clear reasoning. The goal is not simply to move features through a delivery pipeline, but to ensure that the problem is understood, the solution is purposeful, and the teams involved share a common view of what success looks like.",
+          "A two-day product management workshop complemented this work with structured approaches to discovery, prioritization, and delivery. Ultimately, effective product management comes down to connecting strategy with execution, balancing competing perspectives, and maintaining clarity from the initial problem through the delivered experience.",
+          ],
       },
     ],
   },
